@@ -1,0 +1,46 @@
+GNN & Supply Chain Data
+Precog x Alphagrep
+
+Overview
+Multi Relational GNNs combining daily stock features with supply chain data to evaluate additions to the overall signal & predict overall movement of stock based on others.
+Metrics we consider in our experiments :Information CoefficientSharpe Ratios
+
+Data
+Daily Stock Data - Yahoo FinanceIncludes open,close,high,low,volatality,volume
+Data we extracted Supply Chain Used annual reports of nifty50 companies
+
+Feature Engineering
+For Fundamentals,we use OHCLV data.Daily volatility is measured over the 20 day window which is the same we use for the model.
+We also use time indexed data so lag lookup works properly.
+
+Graph Construction
+Correlation Graph : Lagged (t-1) correlation matrix where edges are retained if pearson correlation > 0.15.Vendor Graph : Directed edges + Intra-Sector/Industry Edges.
+Added Industry edges to compensate for sparse supply chain relations
+
+Multi Relational GNN 
+Architecture
+Seperate First Layer Convolutions for Vendor Edges & Correlational Edges.
+Subsequent Shared GCN Layers to forward the learnable attention weights based on how much to trust the correlation signal vs vendor signal.
+
+Lead Lag Modeling
+We create snapshots for the past 10 days while dataset creation,basically storing it with its day indexRow = today’s snapshot and columns indicate how many days back.Current Features are concatenated with lagged features.
+
+
+Portfolio Construction for Sharpe
+Creates a long/short trading strategy with sector caps & retention targets
+Weighting : 60% Signal Strength, 40% how stable the stock is i.e Inverse Volatality, enforcing <=15% per position
+Metrics : Net/Gross Return, IC, Hit rate, turnover ratio, risk estimate, scaling factor, net exposure -> aggregated for sharpe
+
+Loss
+ICLoss = 0.5 * ( 1 - Pearson IC) + 0.5 * MSE + (lambda)*Turnover_Penalty
+Hyperparameter Tuning
+TimeSeries Split to ensure forward-only validation
+We use optuna to tune parameters which include lag steps, dropout, hidden dim, weight decay, turnover weight, epochs.
+
+Portfolio Construction for Sharpe
+Creates a long/short trading strategy with sector caps & retention targets
+Weighting : 60% Signal Strength, 40% how stable the stock is i.e Inverse Volatality, enforcing <=15% per position
+Metrics : Net/Gross Return, IC, Hit rate, turnover ratio, risk estimate, scaling factor, net exposure -> aggregated for sharpe
+
+Results
+Ran an ablation with/without vendor dataGNN with vendor data outperforms by 36% to a similar GNN based model without the supply chain data.Sharpe ~ 1.2

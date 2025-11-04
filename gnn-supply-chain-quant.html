@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Graph Neural Networks for Quantitative Trading - ML Blogs</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .chart-container {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+      .bar-chart {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        height: 300px;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-left: 2px solid #333;
+        border-bottom: 2px solid #333;
+      }
+      .bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        margin: 0 0.5rem;
+      }
+      .bar-fill {
+        width: 100%;
+        background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+        border-radius: 4px 4px 0 0;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      .bar-fill:hover {
+        opacity: 0.8;
+      }
+      .bar-label {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: center;
+      }
+      .bar-value {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #333;
+      }
+      .architecture-diagram {
+        margin: 2rem 0;
+        padding: 2rem;
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+      }
+      .flow-box {
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        margin: 0.5rem;
+        background: #f0f4ff;
+        border: 2px solid #4a90e2;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      .arrow {
+        display: inline-block;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+        color: #666;
+      }
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      .metric-card {
+        padding: 1.5rem;
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .metric-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #4a90e2;
+        margin: 0.5rem 0;
+      }
+      .metric-label {
+        font-size: 0.875rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .highlight-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: #fff9e6;
+        border-left: 4px solid #f7b731;
+        border-radius: 4px;
+      }
+      .formula {
+        padding: 1rem;
+        margin: 1rem 0;
+        background: #f5f5f5;
+        border-radius: 6px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__wrap">
+        <div class="brand">ML Blogs</div>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#blogs">Blogs</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article class="blog-post">
+        <header class="blog-post__header">
+          <h1>Graph Neural Networks Meet Quantitative Trading</h1>
+          <div class="blog-post__meta">
+            <time datetime="2025-10-15">October 15, 2025</time>
+            <span class="blog-post__author">by Vedanta S P</span>
+          </div>
+          <p class="blog-post__tldr">
+            <strong>TL;DR:</strong> Multi-relational GNNs combining daily stock features with supply chain graphs achieve 36% performance improvement over correlation-only models, reaching Sharpe ratio of ~1.2 on NIFTY 50 stocks.
+          </p>
+        </header>
+
+        <section class="blog-post__content">
+          <h2>The Alpha Signal Problem</h2>
+          <p>
+            In quantitative trading, the hunt for uncorrelated alpha signals is relentless. Traditional quant strategies rely heavily on price correlations, technical indicators, and fundamental metrics. But what if we could leverage the <em>structural relationships</em> between companies—their supply chain dependencies—as a predictive signal?
+          </p>
+          <p>
+            This work, conducted in collaboration with <strong>Precog</strong> and <strong>Alphagrep</strong>, explores exactly that: using Graph Neural Networks to model both price correlations and vendor-customer relationships simultaneously, creating a multi-relational graph that captures the interconnected nature of modern markets.
+          </p>
+
+          <h2>The Setup: Two Graphs, One Model</h2>
+          <p>
+            Most financial ML models treat stocks as independent entities. But markets don't work that way. When Tata Steel's stock moves, it affects not just correlated industrials, but also its direct customers in construction and automotive sectors. We can model this explicitly.
+          </p>
+
+          <div class="architecture-diagram">
+            <div style="text-align: center;">
+              <div class="flow-box">Stock OHLCV Data<br/>(Yahoo Finance)</div>
+              <span class="arrow">+</span>
+              <div class="flow-box">Supply Chain Graph<br/>(Annual Reports)</div>
+              <span class="arrow">→</span>
+              <div class="flow-box">Multi-Relational GNN</div>
+              <span class="arrow">→</span>
+              <div class="flow-box">Return Predictions</div>
+            </div>
+          </div>
+
+          <h3>Data Sources</h3>
+          <p>
+            <strong>Daily Stock Data:</strong> We pulled OHLCV (Open, High, Low, Close, Volume) data from Yahoo Finance for NIFTY 50 constituents. Volatility is computed over a 20-day rolling window—the same horizon used for predictions.
+          </p>
+          <p>
+            <strong>Supply Chain Graph:</strong> Here's where it gets interesting. We manually extracted vendor-customer relationships from annual reports of NIFTY 50 companies. This gives us directed edges: if Company A lists Company B as a supplier, we create an edge A → B. To handle sparsity, we also added intra-sector edges for companies in the same industry.
+          </p>
+
+          <h2>Graph Construction: Correlation vs. Structure</h2>
+          <p>
+            We construct two distinct edge types:
+          </p>
+          <ul>
+            <li>
+              <strong>Correlation Graph:</strong> Using lagged (t-1) Pearson correlation matrices, we retain edges where correlation > 0.15. This captures co-movement patterns.
+            </li>
+            <li>
+              <strong>Vendor Graph:</strong> Directed edges from the supply chain, augmented with undirected intra-industry edges to compensate for data sparsity.
+            </li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Key Insight:</strong> The correlation graph captures <em>emergent</em> market dynamics, while the vendor graph captures <em>fundamental</em> business relationships. A multi-relational GNN can learn to weight both signals dynamically.
+          </div>
+
+          <h2>Architecture: Learning to Trust Signals</h2>
+          <p>
+            Our model uses separate first-layer graph convolutions for each relation type:
+          </p>
+          <ol>
+            <li><strong>Layer 1:</strong> Separate GCN convolutions for correlation edges and vendor edges</li>
+            <li><strong>Layer 2+:</strong> Shared GCN layers with learnable attention weights that decide how much to trust each signal type</li>
+            <li><strong>Temporal Component:</strong> We concatenate current features with lagged features from the past 10 days, allowing the model to capture lead-lag dynamics</li>
+          </ol>
+
+          <p>
+            The architecture essentially asks: <em>"Given this stock's neighbors in the correlation graph and its suppliers/customers, what's the best prediction for tomorrow's return?"</em>
+          </p>
+
+          <h2>Training: IC Loss & Portfolio Constraints</h2>
+          <p>
+            Unlike typical regression tasks, quant models need to optimize for <strong>Information Coefficient (IC)</strong>—the rank correlation between predicted and actual returns. We use a custom loss function:
+          </p>
+
+          <div class="formula">
+            ICLoss = 0.5 × (1 - Pearson IC) + 0.5 × MSE + λ × Turnover_Penalty
+          </div>
+
+          <p>
+            The turnover penalty is critical for real-world trading—excessive position changes kill returns through transaction costs. We tune λ alongside other hyperparameters (lag steps, dropout, hidden dimensions) using Optuna with time-series split validation.
+          </p>
+
+          <h3>Portfolio Construction</h3>
+          <p>
+            We simulate a market-neutral long/short strategy with realistic constraints:
+          </p>
+          <ul>
+            <li><strong>Position Weighting:</strong> 60% signal strength, 40% inverse volatility (risk parity)</li>
+            <li><strong>Sector Caps:</strong> No more than 15% exposure per position</li>
+            <li><strong>Retention Targets:</strong> Minimize turnover while maximizing signal capture</li>
+          </ul>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <div class="metric-label">Sharpe Ratio</div>
+              <div class="metric-value">~1.2</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Performance Gain</div>
+              <div class="metric-value">+36%</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Market</div>
+              <div class="metric-value">NIFTY 50</div>
+            </div>
+          </div>
+
+          <h2>Results: Supply Chain Signal Works</h2>
+          <p>
+            The key experiment: ablation study with and without vendor graph edges.
+          </p>
+
+          <div class="chart-container">
+            <h3 style="text-align: center; margin-top: 0;">Model Performance Comparison</h3>
+            <div class="bar-chart">
+              <div class="bar">
+                <div class="bar-fill" style="height: 120px;">
+                  <span class="bar-value">Baseline</span>
+                </div>
+                <div class="bar-label">GNN<br/>(Correlation Only)</div>
+              </div>
+              <div class="bar">
+                <div class="bar-fill" style="height: 200px;">
+                  <span class="bar-value">+36%</span>
+                </div>
+                <div class="bar-label">GNN<br/>(+ Supply Chain)</div>
+              </div>
+            </div>
+            <p style="text-align: center; font-size: 0.875rem; color: #666; margin-top: 1rem;">
+              Relative IC performance (higher is better)
+            </p>
+          </div>
+
+          <p>
+            <strong>The verdict:</strong> Incorporating supply chain structure improves Information Coefficient by 36% over a correlation-only GNN baseline. The final model achieves a Sharpe ratio of approximately 1.2—respectable for a market-neutral equity strategy without leverage.
+          </p>
+
+          <h2>Why Does This Work?</h2>
+          <p>
+            Three mechanisms seem to be at play:
+          </p>
+          <ol>
+            <li>
+              <strong>Information Propagation:</strong> Supply chain edges allow the model to propagate information from upstream suppliers to downstream customers before it's fully priced into correlations.
+            </li>
+            <li>
+              <strong>Structural Priors:</strong> The vendor graph provides a strong inductive bias—relationships that exist in the real economy, not just emergent price patterns.
+            </li>
+            <li>
+              <strong>Robustness:</strong> During regime changes (when correlations break down), supply chain relationships remain more stable, providing signal continuity.
+            </li>
+          </ol>
+
+          <div class="highlight-box">
+            <strong>Practical Note:</strong> Extracting supply chain data from annual reports is labor-intensive. For production systems, this would need to be automated (NLP on 10-Ks/annual reports) or sourced from commercial vendors like FactSet or Bloomberg Supply Chain Analytics.
+          </div>
+
+          <h2>Limitations & Future Work</h2>
+          <p>
+            This is early-stage research with clear limitations:
+          </p>
+          <ul>
+            <li><strong>Data Sparsity:</strong> Only ~50 stocks, manually extracted supply chain edges</li>
+            <li><strong>Transaction Costs:</strong> Backtest doesn't include realistic slippage/spread models</li>
+            <li><strong>Market Impact:</strong> No modeling of how our own trades would move prices</li>
+            <li><strong>Single Market:</strong> Results are specific to Indian equities (NIFTY 50)</li>
+          </ul>
+
+          <h3>Future Directions</h3>
+          <p>
+            Several promising research directions emerged from this work:
+          </p>
+          
+          <p>
+            <strong>Causal Discovery:</strong> Apply the PC algorithm to discover causal relationships in supply chain networks rather than just correlational patterns. This could help distinguish genuine supply chain effects from spurious correlations and identify which vendor relationships actually drive stock movements.
+          </p>
+
+          <p>
+            <strong>Interpretability Tooling:</strong> Develop comprehensive interpretation methods for the GNN:
+          </p>
+          <ul>
+            <li><strong>Attention Visualization Maps:</strong> Visualize which edges (correlation vs. vendor) the model relies on for each prediction</li>
+            <li><strong>Backpropagation Through Layers:</strong> Track gradient flow to understand how information propagates from suppliers to customers</li>
+            <li><strong>Association vs. Causation:</strong> Separate genuine causal signals from associational patterns</li>
+          </ul>
+
+          <p>
+            <strong>Graph Topology Analysis:</strong> Incorporate classical network metrics as features or constraints:
+          </p>
+          <ul>
+            <li><strong>Centrality Measures:</strong> Degree, betweenness, and eigenvector centrality to identify systemically important stocks</li>
+            <li><strong>Graph Entropy:</strong> Measure structural complexity and information content of the supply chain network</li>
+            <li><strong>Random Ordering Tests:</strong> Validate that performance gains come from actual structure, not random edge patterns</li>
+          </ul>
+
+          <p>
+            <strong>Practical Extensions:</strong> Expand to broader universes (S&P 500, global equities), incorporate alternative data (shipping records, satellite imagery), and extend the model to handle corporate events (M&A, supplier changes) dynamically.
+          </p>
+
+          <h2>Conclusion</h2>
+          <p>
+            The intersection of graph learning and quantitative finance is rich territory. By explicitly modeling supply chain relationships alongside traditional price signals, we can build more robust predictors that leverage the actual structure of the economy. The 36% improvement isn't just a number—it's evidence that <em>relational structure matters</em> in financial prediction.
+          </p>
+          <p>
+            As markets become more interconnected and data becomes richer, approaches that model these dependencies explicitly will likely become table stakes for serious quant shops. The graph is not just a representation—it's the signal.
+          </p>
+
+          <hr />
+
+          <div class="blog-post__footer">
+            <p>
+              Research conducted in collaboration with <a href="https://precog.iiit.ac.in/" target="_blank">Precog (IIIT Hyderabad)</a> and Alphagrep.
+            </p>
+            <p>
+              <a href="index.html">← Back to blogs</a>
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 ML Blogs</p>
+    </footer>
+  </body>
+</html>
+
