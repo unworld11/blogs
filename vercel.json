@@ -9,5 +9,9 @@
       "src": "*.css",
       "use": "@vercel/static"
     }
+    {
+      "src": "*.txt",
+      "use": "@vercel/static"
+    }
   ]
 }
