@@ -322,10 +322,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    setItems((prev) => randomizeLayout(prev));
-  }, []);
-
-  useEffect(() => {
     const updateCursor = () => {
       cursorFrameRef.current = null;
       const cursor = cursorRef.current;
