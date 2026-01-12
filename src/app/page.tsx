@@ -501,7 +501,7 @@ export default function Home() {
             aria-label="Pixel collage with hands, figures, and a racing car"
           >
             {items.map((item) => {
-              const style: CSSProperties = {
+              const style: CSSProperties & { "--rotation": string } = {
                 left: `${item.leftPct}%`,
                 top: `${item.topPct}%`,
                 zIndex: item.zIndex,
