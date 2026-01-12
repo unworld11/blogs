@@ -2,12 +2,20 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/vedantasp/blogs",
+      "destination": "/blogs",
+      "permanent": true
     },
     {
-      "src": "*.css",
-      "use": "@vercel/static"
+      "source": "/vedantasp/blogs/:path*",
+      "destination": "/blogs/:path*",
+      "permanent": true
     }
   ]
 }

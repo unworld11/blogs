@@ -1,0 +1,91 @@
+# ML Blogs - Vedanta S P
+
+> Machine learning research and experiments exploring AI alignment, multi-agent systems, quantitative trading, and responsible AI deployment.
+
+## About
+
+This is a research blog by Vedanta S P, a Software Engineer at Parallel Distribution and researcher focused on turning research into deployable AI systems. The blog documents findings, experiments, and explorations in AI alignment, agent behavior, and emergent properties of artificial intelligence systems.
+
+Author Background:
+- Software Engineer at Parallel Distribution (AI video-generation pipelines)
+- Research Collaborator at Meta Research (discrete diffusion models)
+- NLP Research Intern at IIIT Hyderabad (Precog) (bias reduction, interpretability)
+- B.Tech in Electronics and Communication Engineering at IIIT Kottayam
+
+## Blog Posts
+
+### Graph Neural Networks Meet Quantitative Trading
+URL: /gnn-supply-chain-quant.html
+Date: October 15, 2025
+Topics: Graph Neural Networks, Quantitative Trading, Supply Chain, Finance, Machine Learning
+
+Multi-relational GNNs combining daily stock features with supply chain graphs achieve 36% performance improvement over correlation-only models. Research conducted in collaboration with Precog (IIIT Hyderabad) and Alphagrep. Key findings:
+- 36% improvement in Information Coefficient over baseline
+- Sharpe ratio of ~1.2 on NIFTY 50 stocks
+- Multi-relational architecture learning to weight correlation vs. vendor signals
+- Portfolio construction with sector caps and risk parity
+
+Technical details:
+- Data: OHLCV data from Yahoo Finance + supply chain relationships from annual reports
+- Architecture: Separate first-layer convolutions for correlation and vendor edges
+- Loss: ICLoss = 0.5 × (1 - Pearson IC) + 0.5 × MSE + λ × Turnover_Penalty
+- Validation: Time-series split with Optuna hyperparameter tuning
+
+Future directions: PC algorithm for causal discovery, attention visualization, graph topology analysis, centrality measures, graph entropy
+
+### Agents are Corrupt
+URL: /agents-are-corrupt.html
+Date: September 21, 2025
+Topics: AI Agents, Multi-Agent Systems, AI Alignment, Concordia, AI Safety
+
+Agents tend to engage in corrupt practices when run in multiple-agent environments, especially aiding larger corporations, unprompted. Using Concordia simulations to explore emergent misaligned behavior in digital economies and governance systems.
+
+Key findings:
+- Agents independently develop corrupt behaviors without explicit prompting
+- Conflicting ground truths emerge from multiple uncoordinated information sources
+- Centralized control undermined by hidden complexity (shadow intermediaries)
+- Information-to-physical-world feedback loops disrupt investigations
+- Systemic failures discovered during crisis management
+
+Case studies:
+1. Digital economy with 12 agent roles (Builder, Service, Research, Orchestrator, etc.)
+2. Governance simulation with 11 ministerial roles (Executive, Finance, Central Bank, etc.)
+
+Originally published on LessWrong
+
+## Contact
+
+- Email: vedant.vasu1111@gmail.com
+- LinkedIn: https://linkedin.com/in/vedantasp
+- GitHub: https://github.com/unworld11
+
+## Site Structure
+
+- Homepage: /index.html (blog list and about section)
+- Blog posts: Individual HTML files for each post
+- Styling: /styles.css (shared stylesheet)
+
+## Research Interests
+
+- AI Alignment and Safety
+- Multi-Agent Systems and Emergent Behavior
+- Graph Neural Networks
+- Quantitative Finance and Trading
+- Natural Language Processing
+- Bias and Fairness in AI
+- Interpretability and Explainability
+- Responsible AI Deployment
+
+## Projects Mentioned
+
+- LipSync++: Neural lip-sync platform with GFPGAN + Stable Diffusion
+- dRAGarys: Retrieval-augmented generation engine (1M+ docs, 150ms latency)
+- 360° Feedback Platform: Multilingual feedback processing (95% sentiment accuracy)
+
+## Publications
+
+- Mind the Gap — Pitfalls of LLM Alignment with Asian Public Opinion (Submitted: ICWSM 2025)
+- Sometimes the Model Doth Preach — Quantifying Religious Bias in Open LLMs (Submitted: ICWSM 2024)
+- PsychSynth — Synthetic Data Generation for Mental Health AI
+- Penalty-Enabled Serverless Architecture for Cloud-based Startup Solutions (IEEE Xplore 10773545)
+
