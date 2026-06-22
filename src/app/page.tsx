@@ -121,7 +121,7 @@ body.inkwell-body.palette-midnight .inkwell-host .film .poster{border-color:rgba
   .inkwell-host .ig-handle{font-size:36px;}
 }
 
-.inkwell-host .pinterest-floor{position:relative;min-height:760px;margin-top:54px;
+.inkwell-host .pinterest-floor{position:relative;min-height:760px;margin-top:28px;
   background:
     radial-gradient(circle at 25% 18%,rgba(255,255,255,.7),transparent 24%),
     linear-gradient(135deg,rgba(255,255,255,.28),rgba(0,0,0,.035));
@@ -457,7 +457,6 @@ const INKWELL_HTML = `
 
   <section class="block" id="frames">
     <div class="eyebrow-label">vi · pinterest · designs · photographs</div>
-    <h2 class="section-title" data-reveal>Pinterest feed, <em>fallen on the floor.</em></h2>
     <div class="pinterest-floor" data-reveal>
       <div class="pin-polaroid" style="--x:1%;--y:4%;--w:168px;--mw:138px;--r:-9deg;--z:3;--ar:4/3"><img src="/assets/pinterest-polaroids/pin-01.jpg" alt="Pinterest feed reference" loading="lazy"/></div>
       <div class="pin-polaroid" style="--x:18%;--y:1%;--w:144px;--mw:128px;--r:6deg;--z:4;--ar:2/3"><img src="/assets/pinterest-polaroids/pin-02.jpg" alt="Pinterest feed reference" loading="lazy"/></div>
