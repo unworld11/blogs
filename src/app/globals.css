@@ -1,7 +1,21 @@
 :root {
-  --page-bg: #eadccf;
-  --canvas-bg: #eadccf;
-  --ink: #2d241b;
+  --page-bg: #050608;
+  --page-bg-alt: #0b0f13;
+  --ink: #f5f1e8;
+  --muted: #9da5ab;
+  --accent: #ff5e3a;
+  --accent-soft: #ffd86f;
+  --line: rgba(255, 108, 71, 0.3);
+  --warning: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 216, 112, 0.95) 0 12px,
+    rgba(18, 15, 11, 0.95) 12px 24px
+  );
+  --font-space-grotesk: "Avenir Next Condensed", "Arial Narrow Bold", "Arial Narrow",
+    Impact, sans-serif;
+  --font-body: "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "IBM Plex Mono", Menlo, Consolas, monospace;
+  --font-pixel: "Courier New", "Lucida Console", monospace;
 }
 
 * {
@@ -14,14 +28,48 @@ html,
 body {
   min-height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--ink);
-  background: var(--page-bg);
-  font-family: var(--font-space-grotesk), "Space Grotesk", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 94, 58, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(255, 216, 112, 0.05), transparent 18%),
+    linear-gradient(135deg, var(--page-bg-alt), var(--page-bg));
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.025) 50%,
+    transparent
+  );
+  background-size: 100% 6px;
+  mix-blend-mode: screen;
+  opacity: 0.16;
+  pointer-events: none;
 }
 
 a {
