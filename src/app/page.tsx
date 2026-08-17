@@ -89,6 +89,8 @@ body.inkwell-body::before, body.inkwell-body::after{display:none !important;}
 .inkwell-host .book .cover{aspect-ratio:2/3;background:var(--paper-shadow);border:1px solid var(--rule);position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04),0 8px 20px rgba(22,20,15,.06);transition:transform .35s ease,box-shadow .35s ease;}
 .inkwell-host .book .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(.96);}
 .inkwell-host .book .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(0,0,0,.06));pointer-events:none;}
+.inkwell-host .book .cover.img-error::before,
+.inkwell-host .film .poster.img-error::before{content:attr(data-initial);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-style:italic;font-weight:600;font-size:2.6rem;color:var(--ink-4);}
 .inkwell-host .book:hover .cover{transform:translateY(-3px);box-shadow:0 2px 0 rgba(0,0,0,.05),0 14px 28px rgba(22,20,15,.12);}
 .inkwell-host .book .ttl{font-style:italic;font-size:15px;color:var(--ink-2);margin-top:14px;line-height:1.3;}
 .inkwell-host .book .author{font-size:13px;color:var(--ink-3);letter-spacing:.04em;}
@@ -96,6 +98,8 @@ body.inkwell-body::before, body.inkwell-body::after{display:none !important;}
 .inkwell-host .films{display:grid;grid-template-columns:repeat(4,1fr);gap:48px 36px;}
 .inkwell-host .film{display:flex;flex-direction:column;gap:8px;}
 .inkwell-host .film .poster{aspect-ratio:2/3;background:var(--paper-shadow);border:1px solid var(--rule);position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04),0 8px 20px rgba(22,20,15,.06);transition:transform .35s ease,box-shadow .35s ease;}
+.inkwell-host .book .cover.img-error,
+.inkwell-host .film .poster.img-error{background:var(--paper-shadow);}
 .inkwell-host .film .poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(.96);}
 .inkwell-host .film .poster::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(0,0,0,.06));pointer-events:none;}
 .inkwell-host .film:hover .poster{transform:translateY(-3px);box-shadow:0 2px 0 rgba(0,0,0,.05),0 14px 28px rgba(22,20,15,.12);}
@@ -596,6 +600,23 @@ export default function Home() {
     );
     host.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
 
+    const onCoverError = (e: Event) => {
+      const img = e.target as HTMLImageElement;
+      const box = img.closest<HTMLElement>(".cover, .poster");
+      if (!box) return;
+      const ttl = box.parentElement?.querySelector(".ttl")?.textContent?.trim() ?? "";
+      box.classList.add("img-error");
+      box.setAttribute("data-initial", ttl.charAt(0).toUpperCase() || "?");
+      img.style.display = "none";
+    };
+    const coverImgs = Array.from(
+      host.querySelectorAll<HTMLImageElement>(".book .cover img, .film .poster img"),
+    );
+    coverImgs.forEach((img) => {
+      if (img.complete && img.naturalWidth === 0) onCoverError({ target: img } as unknown as Event);
+      img.addEventListener("error", onCoverError);
+    });
+
     const stamp = host.querySelector<HTMLElement>(".stamp");
     const brush = host.querySelector<HTMLElement>(".brush-vert");
     const wave = host.querySelector<HTMLElement>(".wave-bg");
@@ -711,6 +732,7 @@ export default function Home() {
         "ornament-painting",
       );
       io.disconnect();
+      coverImgs.forEach((img) => img.removeEventListener("error", onCoverError));
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
       groupListeners.forEach(([g, fn]) =>
