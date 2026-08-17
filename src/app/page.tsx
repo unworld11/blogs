@@ -422,18 +422,18 @@ const INKWELL_HTML = `
     <div class="eyebrow-label">iv · what i'm reading</div>
     <h2 class="section-title" data-reveal>A shelf, <em>currently in rotation.</em></h2>
     <div class="reading" data-reveal>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg" alt="The Midnight Library" loading="lazy"/></div><div class="ttl">The Midnight Library</div><div class="author">Matt Haig</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9781451648539-L.jpg" alt="Steve Jobs" loading="lazy"/></div><div class="ttl">Steve Jobs</div><div class="author">Walter Isaacson</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9781501135910-L.jpg" alt="Shoe Dog" loading="lazy"/></div><div class="ttl">Shoe Dog</div><div class="author">Phil Knight</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780142414934-L.jpg" alt="Paper Towns" loading="lazy"/></div><div class="ttl">Paper Towns</div><div class="author">John Green</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780140447972-L.jpg" alt="White Nights" loading="lazy"/></div><div class="ttl">White Nights</div><div class="author">Fyodor Dostoyevsky</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9781101904220-L.jpg" alt="Dark Matter" loading="lazy"/></div><div class="ttl">Dark Matter</div><div class="author">Blake Crouch</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/1544514212-L.jpg" alt="The Almanack of Naval Ravikant" loading="lazy"/></div><div class="ttl">The Almanack of Naval Ravikant</div><div class="author">Eric Jorgenson</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg" alt="1984" loading="lazy"/></div><div class="ttl">1984</div><div class="author">George Orwell</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780140449136-L.jpg" alt="Crime and Punishment" loading="lazy"/></div><div class="ttl">Crime and Punishment</div><div class="author">Fyodor Dostoyevsky</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg" alt="Sapiens" loading="lazy"/></div><div class="ttl">Sapiens</div><div class="author">Yuval Noah Harari</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg" alt="The Great Gatsby" loading="lazy"/></div><div class="ttl">The Great Gatsby</div><div class="author">F. Scott Fitzgerald</div></div>
-      <div class="book"><div class="cover"><img src="https://covers.openlibrary.org/b/isbn/9780804139298-L.jpg" alt="Zero to One" loading="lazy"/></div><div class="ttl">Zero to One</div><div class="author">Peter Thiel</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/midnight-library.jpg" alt="The Midnight Library" loading="lazy"/></div><div class="ttl">The Midnight Library</div><div class="author">Matt Haig</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/steve-jobs.jpg" alt="Steve Jobs" loading="lazy"/></div><div class="ttl">Steve Jobs</div><div class="author">Walter Isaacson</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/shoe-dog.jpg" alt="Shoe Dog" loading="lazy"/></div><div class="ttl">Shoe Dog</div><div class="author">Phil Knight</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/paper-towns.jpg" alt="Paper Towns" loading="lazy"/></div><div class="ttl">Paper Towns</div><div class="author">John Green</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/white-nights.jpg" alt="White Nights" loading="lazy"/></div><div class="ttl">White Nights</div><div class="author">Fyodor Dostoyevsky</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/dark-matter.jpg" alt="Dark Matter" loading="lazy"/></div><div class="ttl">Dark Matter</div><div class="author">Blake Crouch</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/naval-almanack.jpg" alt="The Almanack of Naval Ravikant" loading="lazy"/></div><div class="ttl">The Almanack of Naval Ravikant</div><div class="author">Eric Jorgenson</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/1984.jpg" alt="1984" loading="lazy"/></div><div class="ttl">1984</div><div class="author">George Orwell</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/crime-and-punishment.jpg" alt="Crime and Punishment" loading="lazy"/></div><div class="ttl">Crime and Punishment</div><div class="author">Fyodor Dostoyevsky</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/sapiens.jpg" alt="Sapiens" loading="lazy"/></div><div class="ttl">Sapiens</div><div class="author">Yuval Noah Harari</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/great-gatsby.jpg" alt="The Great Gatsby" loading="lazy"/></div><div class="ttl">The Great Gatsby</div><div class="author">F. Scott Fitzgerald</div></div>
+      <div class="book"><div class="cover"><img src="/assets/book-covers/zero-to-one.jpg" alt="Zero to One" loading="lazy"/></div><div class="ttl">Zero to One</div><div class="author">Peter Thiel</div></div>
     </div>
   </section>
 
