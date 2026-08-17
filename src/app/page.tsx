@@ -405,6 +405,7 @@ const INKWELL_HTML = `
     <div class="eyebrow-label">iii · writing</div>
     <h2 class="section-title" data-reveal>Essays, notes, <em>and Substack.</em></h2>
     <div class="writing-list" data-reveal>
+      <a class="item" href="/blogs/the-definition-is-what-changed.html"><div class="date">aug · 2026</div><div class="ttl">the definition is what changed <em>so where do we stand now?</em></div></a>
       <a class="item" href="/blogs/gnn-supply-chain-quant.html"><div class="date">oct · 2025</div><div class="ttl">graph neural networks meet quantitative trading <em>supply-chain structure as predictive signal</em></div></a>
       <a class="item" href="/blogs/agents-are-corrupt.html"><div class="date">sep · 2025</div><div class="ttl">agents are corrupt <em>emergent misalignment in multi-agent simulations</em></div></a>
       <a class="item" href="https://substack.com/@vedantasp" target="_blank" rel="noopener"><div class="date">ongoing</div><div class="ttl">substack <em>short notes, links, and things i'm thinking through</em></div></a>
@@ -497,7 +498,7 @@ const INKWELL_HTML = `
       <a href="https://github.com/unworld11">github</a>
       <a href="https://x.com/vedantasp">x</a>
       <a href="https://www.linkedin.com/in/vedantasp">linkedin</a>
-      <a href="/blogs">blog</a>
+      <a href="/#writing">blog</a>
       <a href="https://substack.com/@vedantasp">substack</a>
       <a href="https://in.pinterest.com/vedantasp/">pinterest</a>
     </div>

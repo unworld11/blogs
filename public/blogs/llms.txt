@@ -14,6 +14,13 @@ Author Background:
 
 ## Blog Posts
 
+### The Definition Is What Changed
+URL: /the-definition-is-what-changed.html
+Date: August 17, 2026
+Topics: Future of Software Engineering, LLMs, AI Labor, Creativity, AI Safety
+
+Dario Amodei's January 2026 claim that software engineers are close to being replaced was largely right on the premise and slightly wrong on the conclusion. Argues that LLMs can now execute what ~95% of engineers do given clear instructions, but consistently converge on the same small set (~4) of solution shapes due to probability-based generation — leaving the remaining creative, structural work (recognizing patterns and reapplying them somewhere genuinely new) as the part that can't be automated away. Concludes that real intelligence was always closer to the capacity to make, imagine, and read art than to IQ-style pattern completion, and that it's the definition of "software engineer" that's being rewritten, not engineers themselves.
+
 ### Graph Neural Networks Meet Quantitative Trading
 URL: /gnn-supply-chain-quant.html
 Date: October 15, 2025

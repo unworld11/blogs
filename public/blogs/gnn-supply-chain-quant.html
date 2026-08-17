@@ -6,156 +6,49 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta 
-      name="description" 
-      content="Multi-relational GNNs combining daily stock features with supply chain graphs achieve 36% performance improvement over correlation-only models. Research on using Graph Neural Networks for quantitative trading with NIFTY 50 stocks, achieving Sharpe ratio of 1.2." 
+    <meta
+      name="description"
+      content="Multi-relational GNNs combining daily stock features with supply chain graphs achieve 36% performance improvement over correlation-only models. Research on using Graph Neural Networks for quantitative trading with NIFTY 50 stocks, achieving Sharpe ratio of 1.2."
     />
     <meta name="keywords" content="Graph Neural Networks, GNN, Quantitative Trading, Supply Chain, Machine Learning, Quant Finance, Stock Prediction, NIFTY 50, Information Coefficient, Sharpe Ratio" />
     <meta name="author" content="Vedanta S P" />
     <link rel="alternate" type="text/plain" href="llms.txt" title="LLMs.txt" />
-    <title>Graph Neural Networks for Quantitative Trading - ML Blogs</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      .chart-container {
-        margin: 2rem 0;
-        padding: 1.5rem;
-        background: #f8f9fa;
-        border-radius: 8px;
-      }
-      .bar-chart {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-around;
-        height: 300px;
-        margin: 1rem 0;
-        padding: 1rem;
-        border-left: 2px solid #333;
-        border-bottom: 2px solid #333;
-      }
-      .bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1;
-        margin: 0 0.5rem;
-      }
-      .bar-fill {
-        width: 100%;
-        background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
-        border-radius: 4px 4px 0 0;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-      .bar-fill:hover {
-        opacity: 0.8;
-      }
-      .bar-label {
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-align: center;
-      }
-      .bar-value {
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: #333;
-      }
-      .architecture-diagram {
-        margin: 2rem 0;
-        padding: 2rem;
-        background: #fff;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-      }
-      .flow-box {
-        display: inline-block;
-        padding: 1rem 1.5rem;
-        margin: 0.5rem;
-        background: #f0f4ff;
-        border: 2px solid #4a90e2;
-        border-radius: 6px;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-      .arrow {
-        display: inline-block;
-        margin: 0 0.5rem;
-        font-size: 1.5rem;
-        color: #666;
-      }
-      .metric-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin: 1.5rem 0;
-      }
-      .metric-card {
-        padding: 1.5rem;
-        background: #fff;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        text-align: center;
-      }
-      .metric-value {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #4a90e2;
-        margin: 0.5rem 0;
-      }
-      .metric-label {
-        font-size: 0.875rem;
-        color: #666;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .highlight-box {
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        background: #fff9e6;
-        border-left: 4px solid #f7b731;
-        border-radius: 4px;
-      }
-      .formula {
-        padding: 1rem;
-        margin: 1rem 0;
-        background: #f5f5f5;
-        border-radius: 6px;
-        font-family: 'Courier New', monospace;
-        font-size: 0.9rem;
-        overflow-x: auto;
-      }
-    </style>
+    <title>Graph Neural Networks for Quantitative Trading — vedanta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Noto+Serif+JP:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="post-styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="site-header__wrap">
-        <div class="brand">ML Blogs</div>
-        <nav class="site-nav">
-          <a href="index.html">Home</a>
-          <a href="index.html#blogs">Blogs</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
+    <div class="page">
+      <header class="topbar">
+        <a class="mark" href="/">v<span class="dot"></span>p</a>
+        <nav class="nav">
+          <a href="/">home</a>
+          <a href="/blogs">writing</a>
+          <a href="/#about">about</a>
+          <a href="/#contact">contact</a>
         </nav>
-      </div>
-    </header>
-    <main>
-      <article class="blog-post">
-        <header class="blog-post__header">
-          <h1>Graph Neural Networks Meet Quantitative Trading</h1>
-          <div class="blog-post__meta">
-            <time datetime="2025-10-15">October 15, 2025</time>
-            <span class="blog-post__author">by Vedanta S P</span>
+      </header>
+
+      <article>
+        <header class="post-header">
+          <div class="eyebrow-label">iii · writing · 15 oct 2025</div>
+          <h1 class="post-title">Graph Neural Networks Meet Quantitative Trading</h1>
+          <div class="post-meta">
+            <span>Vedanta S P</span>
+            <span class="sep">·</span>
+            <span>October 15, 2025</span>
           </div>
-          <p class="blog-post__tldr">
+          <p class="tldr">
             <strong>TL;DR:</strong> Multi-relational GNNs combining daily stock features with supply chain graphs achieve 36% performance improvement over correlation-only models, reaching Sharpe ratio of ~1.2 on NIFTY 50 stocks.
           </p>
         </header>
 
-        <section class="blog-post__content">
+        <section class="post-content">
           <h2>The Alpha Signal Problem</h2>
           <p>
             In quantitative trading, the hunt for uncorrelated alpha signals is relentless. Traditional quant strategies rely heavily on price correlations, technical indicators, and fundamental metrics. But what if we could leverage the <em>structural relationships</em> between companies—their supply chain dependencies—as a predictive signal?
@@ -170,10 +63,10 @@
           </p>
 
           <div class="architecture-diagram">
-            <div style="text-align: center;">
-              <div class="flow-box">Stock OHLCV Data<br/>(Yahoo Finance)</div>
+            <div>
+              <div class="flow-box">Stock OHLCV Data<br />(Yahoo Finance)</div>
               <span class="arrow">+</span>
-              <div class="flow-box">Supply Chain Graph<br/>(Annual Reports)</div>
+              <div class="flow-box">Supply Chain Graph<br />(Annual Reports)</div>
               <span class="arrow">→</span>
               <div class="flow-box">Multi-Relational GNN</div>
               <span class="arrow">→</span>
@@ -188,6 +81,8 @@
           <p>
             <strong>Supply Chain Graph:</strong> Here's where it gets interesting. We manually extracted vendor-customer relationships from annual reports of NIFTY 50 companies. This gives us directed edges: if Company A lists Company B as a supplier, we create an edge A → B. To handle sparsity, we also added intra-sector edges for companies in the same industry.
           </p>
+
+          <div class="rule"><span class="glyph">・</span></div>
 
           <h2>Graph Construction: Correlation vs. Structure</h2>
           <p>
@@ -220,7 +115,9 @@
             The architecture essentially asks: <em>"Given this stock's neighbors in the correlation graph and its suppliers/customers, what's the best prediction for tomorrow's return?"</em>
           </p>
 
-          <h2>Training: IC Loss & Portfolio Constraints</h2>
+          <div class="rule"><span class="glyph">・ ・</span></div>
+
+          <h2>Training: IC Loss &amp; Portfolio Constraints</h2>
           <p>
             Unlike typical regression tasks, quant models need to optimize for <strong>Information Coefficient (IC)</strong>—the rank correlation between predicted and actual returns. We use a custom loss function:
           </p>
@@ -270,16 +167,16 @@
                 <div class="bar-fill" style="height: 120px;">
                   <span class="bar-value">Baseline</span>
                 </div>
-                <div class="bar-label">GNN<br/>(Correlation Only)</div>
+                <div class="bar-label">GNN<br />(Correlation Only)</div>
               </div>
               <div class="bar">
                 <div class="bar-fill" style="height: 200px;">
                   <span class="bar-value">+36%</span>
                 </div>
-                <div class="bar-label">GNN<br/>(+ Supply Chain)</div>
+                <div class="bar-label">GNN<br />(+ Supply Chain)</div>
               </div>
             </div>
-            <p style="text-align: center; font-size: 0.875rem; color: #666; margin-top: 1rem;">
+            <p style="text-align: center; font-size: 0.85rem; color: var(--ink-3); margin-top: 12px; font-style: italic;">
               Relative IC performance (higher is better)
             </p>
           </div>
@@ -287,6 +184,8 @@
           <p>
             <strong>The verdict:</strong> Incorporating supply chain structure improves Information Coefficient by 36% over a correlation-only GNN baseline. The final model achieves a Sharpe ratio of approximately 1.2—respectable for a market-neutral equity strategy without leverage.
           </p>
+
+          <div class="rule"><span class="glyph">・ ・ ・</span></div>
 
           <h2>Why Does This Work?</h2>
           <p>
@@ -308,7 +207,7 @@
             <strong>Practical Note:</strong> Extracting supply chain data from annual reports is labor-intensive. For production systems, this would need to be automated (NLP on 10-Ks/annual reports) or sourced from commercial vendors like FactSet or Bloomberg Supply Chain Analytics.
           </div>
 
-          <h2>Limitations & Future Work</h2>
+          <h2>Limitations &amp; Future Work</h2>
           <p>
             This is early-stage research with clear limitations:
           </p>
@@ -323,7 +222,7 @@
           <p>
             Several promising research directions emerged from this work:
           </p>
-          
+
           <p>
             <strong>Causal Discovery:</strong> Apply the PC algorithm to discover causal relationships in supply chain networks rather than just correlational patterns. This could help distinguish genuine supply chain effects from spurious correlations and identify which vendor relationships actually drive stock movements.
           </p>
@@ -347,7 +246,7 @@
           </ul>
 
           <p>
-            <strong>Practical Extensions:</strong> Expand to broader universes (S&P 500, global equities), incorporate alternative data (shipping records, satellite imagery), and extend the model to handle corporate events (M&A, supplier changes) dynamically.
+            <strong>Practical Extensions:</strong> Expand to broader universes (S&amp;P 500, global equities), incorporate alternative data (shipping records, satellite imagery), and extend the model to handle corporate events (M&amp;A, supplier changes) dynamically.
           </p>
 
           <h2>Conclusion</h2>
@@ -357,23 +256,19 @@
           <p>
             As markets become more interconnected and data becomes richer, approaches that model these dependencies explicitly will likely become table stakes for serious quant shops. The graph is not just a representation—it's the signal.
           </p>
-
-          <hr />
-
-          <div class="blog-post__footer">
-            <p>
-              Research conducted in collaboration with <a href="https://precog.iiit.ac.in/" target="_blank">Precog (IIIT Hyderabad)</a> and Alphagrep.
-            </p>
-            <p>
-              <a href="index.html">← Back to blogs</a>
-            </p>
-          </div>
         </section>
+
+        <div class="post-footer">
+          <p>
+            Research conducted in collaboration with <a href="https://precog.iiit.ac.in/" target="_blank">Precog (IIIT Hyderabad)</a> and Alphagrep.
+          </p>
+          <p><a href="/blogs">← back to writing</a></p>
+        </div>
       </article>
-    </main>
-    <footer class="site-footer">
-      <p>© 2025 ML Blogs</p>
-    </footer>
+
+      <footer class="site-footer">
+        <em>set in eb garamond. built in delhi.</em>
+      </footer>
+    </div>
   </body>
 </html>
-

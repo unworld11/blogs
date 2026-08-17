@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Dario Amodei said software engineers were close to being replaced. Eight months on, the premise holds but the conclusion doesn't — it's not engineers being replaced, it's the definition of the job. On LLM probability collapse and why creativity is the part that's left."
+    />
+    <meta name="keywords" content="AI, Software Engineering, LLMs, Dario Amodei, Anthropic, Creativity, AI Safety, Future of Work" />
+    <meta name="author" content="Vedanta S P" />
+    <link rel="alternate" type="text/plain" href="llms.txt" title="LLMs.txt" />
+    <title>The definition is what changed - ML Blogs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__wrap">
+        <div class="brand">ML Blogs</div>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#blogs">Blogs</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article class="blog-post">
+        <header class="blog-post__header">
+          <h1>The definition is what changed</h1>
+          <div class="blog-post__meta">
+            <time datetime="2026-08-17">August 17, 2026</time>
+            <span class="blog-post__author">by Vedanta S P</span>
+          </div>
+          <p class="blog-post__tldr">
+            <strong>TL;DR:</strong> Dario Amodei's January 2026 claim that software engineers are close to being replaced was a premise mostly right and a conclusion mostly wrong. It isn't engineers who are getting replaced — it's the definition of "software engineer" that's being rewritten under everyone's feet, and what's left standing on the other side of that rewrite is the one thing the models can't do: pattern recognition applied as creativity, not computation.
+          </p>
+        </header>
+
+        <section class="blog-post__content">
+          <h2>The statement that landed like a bomb</h2>
+          <p>
+            In January 2026, Dario Amodei said software engineers were very close to being replaced. Coming from the person running the lab building the systems doing the replacing, it landed differently than the same sentence from an analyst or a pundit. It wasn't a prediction from the outside — it was a status report from the inside, and the publishing world treated it accordingly, as a bomb, the moment it left his mouth.
+          </p>
+          <p>
+            Eight months later, I think he had the premise right and the conclusion slightly wrong. The premise: yes, the vast majority of what the industry calls "software engineering" is now executable by a model given clear instructions. The conclusion he seemed to be reaching for — that engineers, as people, are on their way out — doesn't match what's actually happening. What's on its way out is a definition, not a profession.
+          </p>
+
+          <h2>95% is instruction-following, not engineering</h2>
+          <p>
+            An LLM can do easily what 95% of engineers could do, given clear instructions for a complex system. That's not an insult to the 95% — it's a description of what most professional software work has always actually been: translating a spec into working code, following an established pattern, wiring up the tenth CRUD endpoint of the month, extending a system along a path someone already scoped. That work has a correct-ish answer and clear inputs. It's exactly the shape of task a model trained on probability distributions over "what code plausibly comes next" is built to do, and it does it fast, tirelessly, and increasingly well.
+          </p>
+          <p>
+            The other 5% is different in kind, not in difficulty. It's the part where there's no clear instruction yet — where the question isn't "write this function" but "should this system exist in this shape at all, and how do we make it scale, or even move forward when the obvious path is closed." That's creative ingenuity applied to structure, not code. It doesn't have a spec because nobody has written the spec yet — writing it is the job.
+          </p>
+
+          <h2>Four outcomes, over and over</h2>
+          <p>
+            Here's the part that anyone who's spent real time prompting these systems will recognize without me spelling it out: all LLMs work on probabilities, and they tend to converge on the same handful of outcomes — I'd put it around four — for how they want to build any particular thing. Ask ten different sessions to architect the same feature and you'll get back four shapes, repeated, dressed in different variable names. That's not a bug you patch with a better prompt. It's what a probability distribution looks like when you sample from it — it has modes, and the model keeps landing in them, because that's what "most likely" means at scale.
+          </p>
+          <p>
+            That convergence is fine, even good, for the 95%. Most software doesn't need a novel shape — it needs a correct, well-worn one, applied quickly. But it's a hard ceiling on the other 5%, because that's precisely the work of finding the fifth outcome, the one that isn't in the top four because nobody's tried it enough times for it to become probable.
+          </p>
+
+          <h2>Where that leaves us</h2>
+          <p>
+            So we come back to what humans do best: recognizing patterns, and being creative with what we recognize. Not creative as a soft skill or a personality trait — creative as the specific cognitive move of taking a pattern from one place and forcing it to answer a question in a completely different place, which is not something a model can inherently do, through no fault of its own. It was trained to predict the next most likely token, not to notice that the next token should be the least likely one on purpose.
+          </p>
+          <p>
+            We've spent a long time measuring intelligence on the scale of IQ — pattern completion under a clock. But the real intelligence, the one that doesn't have a leaderboard, has always been the capacity to make art, imagine art, and read art: to produce something that didn't have a most-probable-next-step, to conceive of a structure before evidence for it exists, and to look at someone else's structure and understand why they made the choices they made instead of the four obvious ones. That capacity is what's left after the instruction-following gets automated, and it was never about typing speed or syntax recall to begin with — it was the actual job the whole time, just obscured by how much of the job used to be typing.
+          </p>
+
+          <hr />
+
+          <div class="blog-post__footer">
+            <p>
+              <a href="index.html">← Back to blogs</a>
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 ML Blogs</p>
+    </footer>
+  </body>
+</html>
