@@ -392,6 +392,8 @@ const INKWELL_HTML = `
     <div class="eyebrow-label">ii · selected work</div>
     <h2 class="section-title" data-reveal>Things <em>made,</em> mostly with care.</h2>
     <ul class="work-list" data-reveal>
+      <li><a href="https://manycode.vercel.app" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">manycode <em>· multiplayer coding agents, share a live terminal session with a short code</em></span><span class="arrow">live →</span></a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=milo.dating.in" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">milo <em>· android dating app, kotlin &amp; compose, discovery, chat, calls</em></span><span class="arrow">google play →</span></a></li>
       <li><a href="https://reddit.paralleldistribution.com" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">orca <em>· reddit automation, dashboard, api, background workers, agents</em></span><span class="arrow">live →</span></a></li>
       <li><a href="https://el-gigatronius.vercel.app" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">el gigatronius <em>· tiktok slideshow generator, multi-agent restyling</em></span><span class="arrow">live →</span></a></li>
       <li><a href="https://github.com/unworld11/virtuchat" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">virtuchat <em>· an uncensored, personalised chatbot</em></span><span class="arrow">github →</span></a></li>
