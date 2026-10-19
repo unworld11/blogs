@@ -19,7 +19,7 @@ body.inkwell-body{background:var(--paper);color:var(--ink);font-family:'EB Garam
 body.inkwell-body::before, body.inkwell-body::after{display:none !important;}
 .inkwell-host .page{position:relative;max-width:1080px;margin:0 auto;padding:64px 56px 120px;}
 
-.inkwell-host .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:140px;padding-right:110px;}
+.inkwell-host .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:96px;padding-right:110px;}
 .inkwell-host .mark{font-family:'EB Garamond',serif;font-weight:600;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;}
 .inkwell-host .mark .dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--seal);margin:0 8px 3px;vertical-align:middle}
 .inkwell-host nav{display:flex;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:lowercase;color:var(--ink-3);font-style:italic;}
@@ -34,7 +34,10 @@ body.inkwell-body::before, body.inkwell-body::after{display:none !important;}
 .inkwell-host .hero h1{font-family:'EB Garamond',serif;font-weight:700;font-size:clamp(72px,11vw,148px);line-height:.95;letter-spacing:-.02em;color:var(--ink);}
 .inkwell-host .hero h1 .ampersand{font-style:italic;font-weight:500;color:var(--seal);}
 .inkwell-host .hero .tagline{font-style:italic;font-size:22px;color:var(--ink-2);margin-top:32px;letter-spacing:.005em;}
-.inkwell-host .hero .verse{font-style:italic;font-size:19px;line-height:1.85;color:var(--ink-2);margin-top:64px;max-width:520px;margin-left:auto;margin-right:auto;}
+.inkwell-host .hero .proof{margin-top:20px;font-size:17px;font-style:italic;color:var(--ink-3);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;}
+.inkwell-host .hero .proof a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+.inkwell-host .hero .proof a:hover{color:var(--seal);border-bottom-color:var(--seal);}
+.inkwell-host .hero .verse{font-style:italic;font-size:19px;line-height:1.85;color:var(--ink-2);margin-top:48px;max-width:520px;margin-left:auto;margin-right:auto;}
 .inkwell-host .hero .verse .small{font-size:14px;color:var(--ink-3);display:block;margin-top:22px;font-style:italic;}
 .inkwell-host .hero .links{margin-top:72px;display:flex;justify-content:center;gap:36px;font-size:14px;letter-spacing:.18em;text-transform:lowercase;color:var(--ink-3);font-style:italic;}
 .inkwell-host .hero .links a{color:var(--ink-2);text-decoration:none;position:relative;padding-bottom:4px;}
@@ -48,12 +51,12 @@ body.inkwell-body::before, body.inkwell-body::after{display:none !important;}
 @keyframes inkdraw{to{stroke-dashoffset:0}}
 @keyframes inkfade{to{opacity:1}}
 
-.inkwell-host .rule{position:relative;height:48px;margin:48px auto;display:flex;align-items:center;justify-content:center;}
+.inkwell-host .rule{position:relative;height:48px;margin:16px auto;display:flex;align-items:center;justify-content:center;}
 .inkwell-host .rule::before,.inkwell-host .rule::after{content:'';flex:1;height:1px;background:var(--rule);}
 .inkwell-host .rule .glyph{font-family:'Noto Serif JP',serif;font-weight:300;font-size:18px;color:var(--ink-3);margin:0 24px;letter-spacing:.5em;padding-right:0;}
 
-.inkwell-host section.block{padding:120px 0;position:relative;}
-.inkwell-host .eyebrow-label{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:48px;display:flex;align-items:center;gap:14px;}
+.inkwell-host section.block{padding:88px 0;position:relative;}
+.inkwell-host .eyebrow-label{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:40px;display:flex;align-items:center;gap:14px;}
 .inkwell-host .eyebrow-label::before{content:'';width:24px;height:1px;background:var(--ink-3);}
 .inkwell-host h2.section-title{font-family:'EB Garamond',serif;font-weight:700;font-size:64px;line-height:1.02;letter-spacing:-.015em;margin-bottom:32px;}
 .inkwell-host h2.section-title em{font-weight:500;color:var(--ink-3);}
@@ -113,7 +116,7 @@ body.inkwell-body.palette-midnight .inkwell-host .film .poster{border-color:rgba
 .inkwell-host .ig-call:hover .ig-stage{transform:translateY(-3px);box-shadow:0 2px 0 rgba(0,0,0,.05),0 18px 36px rgba(22,20,15,.14);}
 .inkwell-host .ig-stage svg{width:100%;height:100%;display:block;}
 .inkwell-host .ig-words{display:flex;flex-direction:column;gap:18px;}
-.inkwell-host .ig-kicker{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--ink-3);font-weight:500;display:flex;align-items:center;gap:14px;}
+.inkwell-host .ig-kicker{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-3);font-weight:500;display:flex;align-items:center;gap:14px;}
 .inkwell-host .ig-kicker::before{content:'';width:24px;height:1px;background:var(--ink-3);}
 .inkwell-host .ig-handle{font-family:'EB Garamond',serif;font-weight:600;font-size:44px;letter-spacing:-.005em;color:var(--ink);line-height:1;}
 .inkwell-host .ig-call:hover .ig-handle{color:var(--seal);}
@@ -144,7 +147,7 @@ body.inkwell-body.palette-midnight .inkwell-host .film .poster{border-color:rgba
 .inkwell-host .pin-note{position:absolute;left:47%;top:43%;width:260px;padding:22px 24px 26px;background:#fffdf8;
   color:var(--ink-2);font-size:20px;line-height:1.45;font-style:italic;box-shadow:0 18px 34px rgba(22,20,15,.14);
   transform:rotate(-3deg);z-index:12;}
-.inkwell-host .pin-note .kicker{display:block;margin-bottom:12px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+.inkwell-host .pin-note .kicker{display:block;margin-bottom:12px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;
   color:var(--ink-3);font-style:normal;}
 @media (max-width:780px){
   .inkwell-host .pinterest-floor{min-height:1780px;margin-left:-10px;margin-right:-10px;margin-top:36px;}
@@ -170,7 +173,7 @@ body.inkwell-body.palette-midnight .inkwell-host .film .poster{border-color:rgba
   .inkwell-host .pin-polaroid:nth-child(19){display:none;}
 }
 
-.inkwell-host .contact{text-align:center;padding:160px 0 80px;}
+.inkwell-host .contact{text-align:center;padding:112px 0 72px;}
 .inkwell-host .contact h2{font-family:'EB Garamond',serif;font-weight:500;font-style:italic;font-size:42px;color:var(--ink-2);margin-bottom:48px;}
 .inkwell-host .contact h2 strong{font-style:normal;font-weight:700;color:var(--ink);}
 .inkwell-host .contact .email{font-size:28px;letter-spacing:.02em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink-3);padding-bottom:4px;}
@@ -180,9 +183,9 @@ body.inkwell-body.palette-midnight .inkwell-host .film .poster{border-color:rgba
 .inkwell-host .contact .social a:hover{color:var(--seal);}
 
 .inkwell-host footer{text-align:center;padding:80px 0 0;border-top:1px solid var(--rule);margin-top:80px;font-style:italic;font-size:13px;color:var(--ink-3);letter-spacing:.04em;}
-.inkwell-host footer .small{display:block;margin-top:10px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-4);}
+.inkwell-host footer .small{display:block;margin-top:10px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);}
 
-.inkwell-host .wave-bg{position:absolute;left:50%;transform:translateX(-50%);bottom:-180px;width:1400px;max-width:140vw;height:340px;pointer-events:none;opacity:.18;}
+.inkwell-host .wave-bg{position:absolute;left:0;right:0;margin:0 auto;bottom:-180px;width:min(1400px,calc(100% - 16px));height:340px;pointer-events:none;opacity:.18;}
 .inkwell-host .mountain-bg{position:absolute;right:-20px;width:280px;pointer-events:none;opacity:.08;}
 .inkwell-host .moon{position:absolute;right:120px;top:240px;width:96px;height:96px;border-radius:50%;background:transparent;border:1px solid var(--ink-3);pointer-events:none;}
 .inkwell-host .moon::after{content:'';position:absolute;inset:6px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--paper-shadow),transparent 70%);}
@@ -193,7 +196,7 @@ body.inkwell-body.palette-midnight .inkwell-host .film .poster{border-color:rgba
 .inkwell-host [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.22,.61,.36,1);}
 .inkwell-host [data-reveal].in{opacity:1;transform:none;}
 
-.inkwell-host .vert-mark{position:absolute;left:18px;top:380px;writing-mode:vertical-rl;font-family:'Noto Serif JP',serif;font-weight:300;font-size:11px;letter-spacing:.6em;color:var(--ink-4);text-transform:uppercase;}
+.inkwell-host .vert-mark{position:absolute;left:18px;top:380px;writing-mode:vertical-rl;font-family:'Noto Serif JP',serif;font-weight:300;font-size:13px;letter-spacing:.5em;color:var(--ink-3);text-transform:uppercase;}
 
 body.inkwell-body.palette-washi{
   --paper:#ece1c8;--paper-shadow:#dccdaf;
@@ -293,6 +296,14 @@ body.inkwell-body.ornament-painting .inkwell-host .opt-mountain{display:block;}
   .inkwell-host .brush-vert,.inkwell-host .vert-mark{display:none}
   .inkwell-host nav{display:none}
   .inkwell-host h2.section-title{font-size:44px}
+  .inkwell-host .contact h2{font-size:32px}
+  .inkwell-host .work-list li a{grid-template-columns:44px 1fr;gap:16px;}
+  .inkwell-host .work-list .arrow{display:none}
+  .inkwell-host .work-list .title{font-size:21px}
+  .inkwell-host .work-list .title em{display:block;margin:4px 0 0;font-size:16px;line-height:1.45}
+  .inkwell-host .writing-list .item .ttl em{display:block;margin-top:4px;font-size:17px;line-height:1.4}
+  .inkwell-host .hero .proof{font-size:16px;flex-direction:column;gap:2px}
+  .inkwell-host .hero .proof span{display:none}
 }
 `;
 
@@ -312,8 +323,8 @@ const INKWELL_HTML = `
       <rect x="3" y="3" width="72" height="72" fill="none" stroke="var(--seal)" stroke-width="2"/>
       <rect x="8" y="8" width="62" height="62" fill="none" stroke="var(--seal)" stroke-width=".8"/>
       <text id="hanko-glyph" x="39" y="36" text-anchor="middle" fill="var(--seal)" font-family="Noto Serif JP" font-size="22" font-weight="400">影</text>
-      <text x="39" y="60" text-anchor="middle" fill="var(--seal)" font-family="EB Garamond" font-size="11" font-style="italic" letter-spacing="2">vp</text>
-      <text x="39" y="84" text-anchor="middle" fill="var(--ink-3)" font-family="EB Garamond" font-size="8" font-style="italic" letter-spacing="3">MMXXVI</text>
+      <text x="39" y="60" text-anchor="middle" fill="var(--seal)" font-family="EB Garamond" font-size="13" font-style="italic" letter-spacing="2">vp</text>
+      <text x="39" y="84" text-anchor="middle" fill="var(--ink-3)" font-family="EB Garamond" font-size="11" font-style="italic" letter-spacing="1.5">MMXXVI</text>
     </svg>
   </div>
 
@@ -344,7 +355,8 @@ const INKWELL_HTML = `
   <section class="hero">
     <div data-reveal class="eyebrow">portfolio, writing, and taste notes</div>
     <h1 data-reveal>vedanta<span class="ampersand">.</span></h1>
-    <p class="tagline" data-reveal><em>engineer building systems, tools, and small experiments.</em></p>
+    <p class="tagline" data-reveal><em>engineering lead at parallel, product builder, and ai researcher.</em></p>
+    <p class="proof" data-reveal><a href="#work">manycode, #17 on product hunt</a><span>·</span><a href="#research">icwsm 2026 paper</a><span>·</span><a href="#about">20M+ monthly views at parallel</a></p>
     <div data-reveal class="verse">
       <em>
       i like sharp interfaces,<br/>
@@ -518,7 +530,7 @@ const INKWELL_HTML = `
   <div class="rule"><span class="glyph">・</span></div>
 
   <section class="contact" id="contact" data-reveal>
-    <h2>If you're building something <strong>useful or tasteful,</strong><br/>I'd love to hear from you.</h2>
+    <h2>Making something <strong>useful?</strong> Say hello.</h2>
     <a class="email" href="mailto:vedant.vasu1111@gmail.com">vedant.vasu1111@gmail.com</a>
     <div class="social">
       <a href="https://github.com/unworld11">github</a>
@@ -659,7 +671,7 @@ export default function Home() {
         stamp.style.transform = `translate(${cx * -6}px, ${cy * -4}px) rotate(${cx * -1.2}deg)`;
       if (brush) brush.style.transform = `translate(${cx * 10}px, ${cy * 6}px)`;
       if (wave)
-        wave.style.transform = `translateX(calc(-50% + ${cx * -20}px)) translateY(${cy * 8}px)`;
+        wave.style.transform = `translateX(${cx * -20}px) translateY(${cy * 8}px)`;
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
