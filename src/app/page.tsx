@@ -332,6 +332,7 @@ const INKWELL_HTML = `
     <nav>
       <a href="#about">about</a>
       <a href="#work">work</a>
+      <a href="#research">research</a>
       <a href="#writing">writing</a>
       <a href="#reading">reading</a>
       <a href="#watching">watching</a>
@@ -369,15 +370,19 @@ const INKWELL_HTML = `
       <div class="stack" data-reveal>
         <p>I build software across infra, product, and odd side projects. The work I like most is simple on the surface and serious underneath: a clean interface, a reliable system, a useful automation.</p>
         <p>My taste leans toward strong type, old hardware, movie frames, posters, and objects that feel deliberately made. Pinterest is where a lot of that gets collected before it turns into a page, a product detail, or a small design choice.</p>
-        <p><em>currently:</em> based in delhi, working on distributed systems, agentic tooling, and whatever side project is stuck in my head that week.</p>
+        <p>At Parallel Distribution I lead engineering. I started the Reddit distribution division from nothing, and it now runs as a team of three serving four brands at 20M+ views a month. I also moved our model inference off Replicate onto our own GPUs, which halved inference time and cost and saves over $50K a month.</p>
+        <p>On the research side I built discrete diffusion models for multi-step reasoning with Niklas Nolte at Meta, and worked on bias and interpretability in LLMs at Precog, IIIT Hyderabad.</p>
+        <p><em>currently:</em> based in delhi, working on agentic tooling, coding agents, and whatever side project is stuck in my head that week.</p>
       </div>
       <dl class="meta" data-reveal>
         <dt>now</dt>
-        <dd>engineering @ parallel</dd>
-        <dt>before</dt>
-        <dd>infra, then product</dd>
+        <dd>engineering lead @ parallel</dd>
+        <dt>research</dt>
+        <dd>meta research · precog, iiit hyderabad</dd>
+        <dt>studied</dt>
+        <dd>b.tech ece · iiit kottayam</dd>
         <dt>tools</dt>
-        <dd>go · ts · postgres · design references</dd>
+        <dd>python · ts · kotlin · pytorch · postgres</dd>
         <dt>elsewhere</dt>
         <dd>delhi · pinterest boards · used bookshops</dd>
         <dt>taste</dt>
@@ -392,6 +397,9 @@ const INKWELL_HTML = `
     <div class="eyebrow-label">ii · selected work</div>
     <h2 class="section-title" data-reveal>Things <em>made,</em> mostly with care.</h2>
     <ul class="work-list" data-reveal>
+      <li><a href="https://manycode.vercel.app" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">manycode <em>· multiplayer claude code and codex sessions, #17 on product hunt</em></span><span class="arrow">live →</span></a></li>
+      <li><a><span class="yr">2026</span><span class="title">ads-codex <em>· mac app running codex and the claude agent sdk behind one interface, sharing media tools over mcp</em></span><span class="arrow">in progress</span></a></li>
+      <li><a href="https://github.com/unworld11/opensource-codex" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">opensource-codex <em>· openai's codex desktop client, extracted and made runnable</em></span><span class="arrow">github →</span></a></li>
       <li><a href="https://reddit.paralleldistribution.com" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">orca <em>· reddit automation, dashboard, api, background workers, agents</em></span><span class="arrow">live →</span></a></li>
       <li><a href="https://el-gigatronius.vercel.app" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">el gigatronius <em>· tiktok slideshow generator, multi-agent restyling</em></span><span class="arrow">live →</span></a></li>
       <li><a href="https://github.com/unworld11/virtuchat" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">virtuchat <em>· an uncensored, personalised chatbot</em></span><span class="arrow">github →</span></a></li>
@@ -405,8 +413,22 @@ const INKWELL_HTML = `
 
   <div class="rule"><span class="glyph">・ ・ ・</span></div>
 
+  <section class="block" id="research">
+    <div class="eyebrow-label">iii · research</div>
+    <h2 class="section-title" data-reveal>Papers, <em>mostly about bias.</em></h2>
+    <ul class="work-list" data-reveal>
+      <li><a href="https://arxiv.org/abs/2603.06264" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">mind the gap <em>· pitfalls of llm alignment with asian public opinion, icwsm 2026</em></span><span class="arrow">arxiv →</span></a></li>
+      <li><a href="https://arxiv.org/abs/2503.07510" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">sometimes the model doth preach <em>· religious bias in open llms across asian nations</em></span><span class="arrow">arxiv →</span></a></li>
+      <li><a><span class="yr">2025</span><span class="title">discrete diffusion for reasoning <em>· multi-step symbolic reasoning on chess, with niklas nolte at meta</em></span><span class="arrow">meta research</span></a></li>
+      <li><a><span class="yr">2024</span><span class="title">psychsynth <em>· synthetic data generation for mental health ai</em></span><span class="arrow">paper</span></a></li>
+      <li><a href="https://ieeexplore.ieee.org/document/10773545" target="_blank" rel="noopener"><span class="yr">2024</span><span class="title">penalty-enabled serverless architecture <em>· cloud infrastructure for early startups</em></span><span class="arrow">ieee →</span></a></li>
+    </ul>
+  </section>
+
+  <div class="rule"><span class="glyph">・ ・ ・ ・</span></div>
+
   <section class="block" id="writing">
-    <div class="eyebrow-label">iii · writing</div>
+    <div class="eyebrow-label">iv · writing</div>
     <h2 class="section-title" data-reveal>Essays, notes, <em>and Substack.</em></h2>
     <div class="writing-list" data-reveal>
       <a class="item" href="/blogs/the-definition-is-what-changed.html"><div class="date">aug · 2026</div><div class="ttl">the definition is what changed <em>so where do we stand now?</em></div></a>
@@ -416,10 +438,10 @@ const INKWELL_HTML = `
     </div>
   </section>
 
-  <div class="rule"><span class="glyph">・ ・ ・ ・</span></div>
+  <div class="rule"><span class="glyph">・ ・ ・ ・ ・</span></div>
 
   <section class="block" id="reading">
-    <div class="eyebrow-label">iv · what i'm reading</div>
+    <div class="eyebrow-label">v · what i'm reading</div>
     <h2 class="section-title" data-reveal>A shelf, <em>currently in rotation.</em></h2>
     <div class="reading" data-reveal>
       <div class="book"><div class="cover"><img src="/assets/book-covers/midnight-library.jpg" alt="The Midnight Library" loading="lazy"/></div><div class="ttl">The Midnight Library</div><div class="author">Matt Haig</div></div>
@@ -437,10 +459,10 @@ const INKWELL_HTML = `
     </div>
   </section>
 
-  <div class="rule"><span class="glyph">・ ・ ・ ・ ・</span></div>
+  <div class="rule"><span class="glyph">・ ・ ・ ・ ・ ・</span></div>
 
   <section class="block" id="watching">
-    <div class="eyebrow-label">v · what i'm watching</div>
+    <div class="eyebrow-label">vi · what i'm watching</div>
     <h2 class="section-title" data-reveal>Films <em>i keep thinking about.</em></h2>
     <div class="films" data-reveal>
       <div class="film"><div class="poster"><img src="https://image.tmdb.org/t/p/w500/yihdXomYb5kTeSivtFndMy5iDmf.jpg" alt="Project Hail Mary" loading="lazy"/></div><div class="ttl">Project Hail Mary</div><div class="byline">Lord &amp; Miller · 2026</div></div>
@@ -458,10 +480,10 @@ const INKWELL_HTML = `
     </div>
   </section>
 
-  <div class="rule"><span class="glyph">・ ・ ・ ・ ・ ・</span></div>
+  <div class="rule"><span class="glyph">・ ・ ・ ・ ・ ・ ・</span></div>
 
   <section class="block" id="frames">
-    <div class="eyebrow-label">vi · pinterest · designs · photographs</div>
+    <div class="eyebrow-label">vii · pinterest · designs · photographs</div>
     <div class="pinterest-floor" data-reveal>
       <div class="pin-polaroid" style="--x:1%;--y:4%;--w:168px;--mw:138px;--r:-9deg;--z:3;--ar:4/3"><img src="/assets/pinterest-polaroids/pin-01.jpg" alt="Pinterest feed reference" loading="lazy"/></div>
       <div class="pin-polaroid" style="--x:18%;--y:1%;--w:144px;--mw:128px;--r:6deg;--z:4;--ar:2/3"><img src="/assets/pinterest-polaroids/pin-02.jpg" alt="Pinterest feed reference" loading="lazy"/></div>
