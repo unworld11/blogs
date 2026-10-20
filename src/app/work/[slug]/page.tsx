@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AQUAPURE, PROJECTS, getProject, nextProject, type Media, type Project, type Section } from "../projects";
-import ShotPlayer from "./ShotPlayer";
+import { PROJECTS, getProject, nextProject, type Media, type Project, type Section } from "../projects";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
@@ -66,6 +65,27 @@ function SectionBlock({ s, flip }: { s: Section; flip: boolean }) {
         <div className="wk-wrap wk-codewrap">
           <Prose s={s} />
           {s.media?.map((m, i) => <MediaBlock key={i} m={m} i={2} />)}
+        </div>
+      </section>
+    );
+  }
+
+  if (layout === "stills") {
+    return (
+      <section className="wk-night wk-section" id={s.id}>
+        <div className="wk-wrap">
+          <div className="wk-stills-head">
+            <Prose s={s} />
+          </div>
+          <div className="wk-stills">
+            {s.media?.map((m, i) =>
+              m.kind === "image" ? (
+                <figure key={i} className="wk-still" {...rise(i)}>
+                  <Image src={m.src} alt={m.alt} width={m.w} height={m.h} sizes="(max-width: 780px) 50vw, 20vw" />
+                </figure>
+              ) : null,
+            )}
+          </div>
         </div>
       </section>
     );
@@ -163,25 +183,6 @@ function Action({ p }: { p: Project }) {
 }
 
 function Hero({ p }: { p: Project }) {
-  if (p.slug === "adforge") {
-    return (
-      <header className="wk-wrap af-hero">
-        <div className="text">
-          <h1 className="wk-title" {...rise(0)}>
-            {p.name}
-          </h1>
-          <p className="wk-statement" {...rise(1)}>
-            {p.line}
-          </p>
-          <Facts p={p} />
-          <Action p={p} />
-        </div>
-        <div className="reel">
-          <video src={AQUAPURE.video} poster={AQUAPURE.poster} autoPlay muted loop playsInline preload="metadata" aria-label="A 29-second ad rendered by adforge, playing muted" />
-        </div>
-      </header>
-    );
-  }
   return (
     <header className="wk-wrap wk-hero">
       <h1 className="wk-title" {...rise(0)}>
@@ -236,14 +237,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           ))}
         </div>
       </section>
-
-      {p.slug === "adforge" && (
-        <section className="sb" id="storyboard">
-          <div className="wk-wrap">
-            <ShotPlayer {...AQUAPURE} />
-          </div>
-        </section>
-      )}
 
       {p.sections.map((s, i) => (
         <SectionBlock key={s.heading} s={s} flip={i % 2 === 1} />

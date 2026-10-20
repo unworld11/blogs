@@ -1,12 +1,3 @@
-export type Shot = {
-  start: number;
-  type: "presenter" | "b-roll";
-  still: string;
-  line: string;
-  gloss: string;
-  scene: string;
-};
-
 export type Media =
   | {
       kind: "image";
@@ -24,7 +15,7 @@ export type Section = {
   heading: string;
   body: string[];
   media?: Media[];
-  layout?: "wide" | "side" | "pair" | "code";
+  layout?: "wide" | "side" | "pair" | "code" | "stills";
 };
 
 export type Project = {
@@ -43,23 +34,6 @@ export type Project = {
 
 const W = 1600;
 
-export const AQUAPURE: { video: string; poster: string; duration: number; shots: Shot[] } = {
-  video: "/work/adforge/aquapure.mp4",
-  poster: "/work/adforge/aquapure-poster.jpg",
-  duration: 29.2,
-  shots: [
-    { start: 0, type: "presenter", still: "/work/adforge/shot-0.jpg", line: "क्या आप भूल जाते हैं पानी पीना?", gloss: "Do you forget to drink water?", scene: "She stands in a bright apartment, plants and window light behind her." },
-    { start: 2.55, type: "b-roll", still: "/work/adforge/shot-1.jpg", line: "AquaPure आपका स्मार्ट हाइड्रेशन पार्टनर है।", gloss: "AquaPure is your smart hydration partner.", scene: "The bottle on a white desk beside a laptop and phone, its LED ring lit." },
-    { start: 6.1, type: "presenter", still: "/work/adforge/shot-2.jpg", line: "यह सिर्फ बोतल नहीं है,", gloss: "It isn't just a bottle,", scene: "A close-up as she raises the bottle toward the lens." },
-    { start: 7.94, type: "b-roll", still: "/work/adforge/shot-3.jpg", line: "बल्कि आपका पर्सनल हाइड्रेशन कोच है जो हर घंटे रिमाइंडर देता है।", gloss: "it's a personal hydration coach that reminds you every hour.", scene: "A finger taps the cap and the display wakes with the hydration count." },
-    { start: 12, type: "b-roll", still: "/work/adforge/shot-4.jpg", line: "UV सेल्फ-क्लीनिंग तकनीक से", gloss: "With UV self-cleaning,", scene: "The same desk, held continuous from the shot before it." },
-    { start: 16.04, type: "presenter", still: "/work/adforge/shot-5.jpg", line: "हमेशा शुद्ध पानी पिएं। बैटरी 30 दिन चलती है।", gloss: "always drink pure water. The battery lasts 30 days.", scene: "Back to her, same wardrobe and watch, talking to camera." },
-    { start: 20.14, type: "b-roll", still: "/work/adforge/shot-6.jpg", line: "ऑफिस हो, जिम हो, या ट्रैवल,", gloss: "Office, gym or travel,", scene: "The bottle in a car cup holder, city traffic out of focus." },
-    { start: 23.19, type: "presenter", still: "/work/adforge/shot-7.jpg", line: "AquaPure हर जगह आपके साथ।", gloss: "AquaPure goes everywhere with you.", scene: "She holds the bottle up at chest height and smiles." },
-    { start: 25.57, type: "b-roll", still: "/work/adforge/shot-8.jpg", line: "आज ही ऑर्डर करें और हेल्दी लाइफस्टाइल शुरू करें!", gloss: "Order today and start a healthier routine.", scene: "A kitchen counter in morning light, fruit and coffee beside the bottle." },
-  ],
-};
-
 export const PROJECTS: Project[] = [
   {
     slug: "adforge",
@@ -67,14 +41,29 @@ export const PROJECTS: Project[] = [
     year: "2026",
     line: "Describe an ad in a sentence and get back a finished vertical film up to three minutes long, with one cast throughout.",
     status: "Private repo, in use",
-    action: { label: "Watch a render", href: "#storyboard" },
     links: [],
     stack: ["Next.js 16", "fal.ai", "Seedance 2.5", "nano-banana", "Sarvam Bulbul v3", "ElevenLabs", "Claude Sonnet 4.5", "trigger.dev", "ffmpeg", "Neon", "Vercel Blob"],
+    lead: { kind: "image", src: "/work/adforge/create.jpg", alt: "adforge brief screen: a creative director chat with tabs for Describe it, Winning formula and Fill the form", w: W, h: 844 },
     intro: [
       "adforge is an ad studio that takes a brief written the way you'd say it out loud, in English or Hindi, and turns it into a storyboard, a cast, locations, voiceover, music and captions, then renders every shot and stitches them into one 9:16 film.",
       "Most video models give you five or ten good seconds. The hard part of a long ad is everything between the shots: the same face in shot one and shot twenty-nine, the same kitchen when the story comes back to it, a voice that matches the lips. adforge exists to manage that, and to stop and ask before it spends money on a script nobody approved.",
     ],
     sections: [
+      {
+        id: "stills",
+        heading: "One cast, held across a render",
+        body: [
+          "Five frames from one 29-second render of a Hindi brief for a smart water bottle. She's the same person in the same top and watch every time the story comes back to her, and the bottle keeps its shape from the desk to the kitchen.",
+        ],
+        media: [
+          { kind: "image", src: "/work/adforge/still-1.jpg", alt: "The presenter, a woman in a navy top and silver watch, in a bright apartment", w: 720, h: 1260 },
+          { kind: "image", src: "/work/adforge/still-2.jpg", alt: "The bottle on a white desk beside a laptop and phone", w: 720, h: 1260 },
+          { kind: "image", src: "/work/adforge/still-3.jpg", alt: "The same woman again, a few shots later, in the same top and watch", w: 720, h: 1260 },
+          { kind: "image", src: "/work/adforge/still-4.jpg", alt: "The same woman holding the bottle up at chest height and smiling", w: 720, h: 1260 },
+          { kind: "image", src: "/work/adforge/still-5.jpg", alt: "The bottle on a kitchen counter beside fruit and coffee", w: 720, h: 1260 },
+        ],
+        layout: "stills",
+      },
       {
         id: "brief",
         heading: "It starts as a conversation",
@@ -82,8 +71,7 @@ export const PROJECTS: Project[] = [
           "The brief is a chat with a creative director that offers two or three concepts to pick from, and has a tough-love switch for when you want it to push back on a weak idea. You can skip the chat and fill a form instead, or write the whole thing in Hindi.",
           "Length runs from 15 seconds to three minutes. The storyboard writer sizes every shot to how long its line takes to say, about two and a half words a second, so a 60-second brief comes back with roughly 150 words of script split across the shots.",
         ],
-        media: [{ kind: "image", src: "/work/adforge/create.jpg", alt: "adforge brief screen: a creative director chat with tabs for Describe it, Winning formula and Fill the form", w: W, h: 844, caption: "The brief, in a real local session." }],
-        layout: "side",
+        layout: "wide",
       },
       {
         id: "reference",
@@ -105,7 +93,6 @@ export const PROJECTS: Project[] = [
         media: [
           { kind: "image", src: "/work/adforge/nimbus.jpg", alt: "Script gate for a mattress ad: 31 shots, about 159 seconds, with character and style notes", w: W, h: 1000, caption: "Script gate for a mattress ad: 31 shots, about 159 seconds." },
           { kind: "image", src: "/work/adforge/nimbus-world.jpg", alt: "World panel with generated cast references and locations, each with a regenerate button", w: W, h: 1000, caption: "The world: cast and locations, generated or uploaded before any frame is drawn." },
-          { kind: "image", src: "/work/adforge/frames.jpg", alt: "Frames gate showing estimated cost, voice check settings and a row of reference frames", w: W, h: 1000, caption: "Frames, the voice check and the cost so far." },
         ],
         layout: "wide",
       },
@@ -118,19 +105,16 @@ export const PROJECTS: Project[] = [
         ],
         media: [
           { kind: "image", src: "/work/adforge/nimbus-shots.jpg", alt: "Script editor rows: shot type, location tag, scene text and voiceover line for each shot", w: W, h: 1000, caption: "Shot rows in the long script, each tied to a location from the world." },
-          { kind: "image", src: "/work/adforge/aqua-shots.jpg", alt: "Videos gate: a grid of rendered 9:16 shots, each with a regenerate button", w: W, h: 1000, caption: "Rendered shots. Any one of them can be redone without touching the rest." },
         ],
-        layout: "pair",
+        layout: "side",
       },
       {
         id: "final",
         heading: "The cut, captions and all",
         body: [
-          "The final screen hands over the MP4 and a caption file. Finished films are copied to durable storage, because the model host's links expire after three days.",
-          "The app estimated $9.36 to render the 29-second AquaPure ad above. That running estimate, plus the ceiling, is what makes a three-minute brief something you can run without checking a bill afterwards.",
+          "The last gate hands over the MP4 and a caption file. Finished films are copied to durable storage, because the model host's links expire after three days.",
+          "Every stage keeps a running cost estimate against a ceiling, which is what makes a three-minute brief something you can run without checking a bill afterwards.",
         ],
-        media: [{ kind: "image", src: "/work/adforge/aqua.jpg", alt: "Final ad ready screen with a 9:16 player, Download MP4 and Captions SRT buttons", w: W, h: 1000, caption: "The final gate for the AquaPure render." }],
-        layout: "side",
       },
     ],
   },
