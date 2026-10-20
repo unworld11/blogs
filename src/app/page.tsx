@@ -420,7 +420,6 @@ const INKWELL_HTML = `
       <li><a href="/work/make-videos-like-3b1b"><span class="yr">2025</span><span class="title">make-videos-like-3b1b <em>· ai-written manim, in the spirit of 3blue1brown</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/tinygrad"><span class="yr">2025</span><span class="title">tinygrad <em>· a small autograd engine, after karpathy</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/dragarys"><span class="yr">2024</span><span class="title">dRAGarys <em>· self-reflective retrieval-augmented generation</em></span><span class="arrow">view →</span></a></li>
-      <li><a href="/work/sisyphus"><span class="yr">2024</span><span class="title">sisyphus <em>· csv &amp; sheets analysis with llama and serp</em></span><span class="arrow">view →</span></a></li>
     </ul>
   </section>
 

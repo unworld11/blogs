@@ -540,43 +540,6 @@ workflow.add_node("transform_query", transform_query)`,
     ],
     sections: [],
   },
-  {
-    slug: "sisyphus",
-    name: "sisyphus",
-    year: "2024",
-    line: "Ask questions about a CSV or a Google Sheet in plain English, with web search folded in when the data isn't enough.",
-    status: "Public on GitHub",
-    action: { label: "Read the code on GitHub", href: "https://github.com/unworld11/sisyphus" },
-    links: [
-      { label: "github.com/unworld11/sisyphus", href: "https://github.com/unworld11/sisyphus" },
-      { label: "Loom walkthrough", href: "https://www.loom.com/share/8159c85d39bd4e9d9d28abd4997317d5" },
-    ],
-    stack: ["Python", "Streamlit", "Groq", "Llama 3 8B", "SerpAPI", "Google Sheets API"],
-    lead: {
-      kind: "code",
-      file: "app.py, condensed",
-      code: `system_context = (
-    f"Analyzing a dataset with {stats['rows']} rows "
-    f"and columns: {', '.join(stats['columns'])}."
-)
-if use_web_search:
-    results = web_search(question)
-    system_context += "\\nWeb search results:\\n" + "\\n".join(
-        f"- {r['snippet']}" for r in results
-    )
-
-completion = client.chat.completions.create(
-    model="llama3-8b-8192",
-    messages=[{"role": "system", "content": system_context},
-              {"role": "user", "content": question}],
-)`,
-    },
-    intro: [
-      "Upload a CSV or paste a sheet link and sisyphus shows a preview, column statistics and charts for the columns you choose. Questions go to Llama 3 on Groq with the shape of the dataset as context, and when the answer needs the outside world, three search results from SerpAPI go along with it.",
-      "Every answer is kept in a running table with its question and timestamp, so an analysis session leaves a record behind.",
-    ],
-    sections: [],
-  },
 ];
 
 export function getProject(slug: string) {
