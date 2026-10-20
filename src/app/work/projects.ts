@@ -127,7 +127,7 @@ export const PROJECTS: Project[] = [
         heading: "The cut, captions and all",
         body: [
           "The final screen hands over the MP4 and a caption file. Finished films are copied to durable storage, because the model host's links expire after three days.",
-          "The app's own cost meter put the AquaPure ad above at $9.36 for 29 seconds. That counter, plus the ceiling, is what makes a three-minute brief something you can run without checking a bill afterwards.",
+          "The app estimated $9.36 to render the 29-second AquaPure ad above. That running estimate, plus the ceiling, is what makes a three-minute brief something you can run without checking a bill afterwards.",
         ],
         media: [{ kind: "image", src: "/work/adforge/aqua.jpg", alt: "Final ad ready screen with a 9:16 player, Download MP4 and Captions SRT buttons", w: W, h: 1000, caption: "The final gate for the AquaPure render." }],
         layout: "side",
