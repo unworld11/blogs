@@ -414,7 +414,6 @@ const INKWELL_HTML = `
       <li><a href="/work/ads-codex"><span class="yr">2026</span><span class="title">ads-codex <em>· mac app running codex and the claude agent sdk behind one interface, sharing media tools over mcp</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/opensource-codex"><span class="yr">2026</span><span class="title">opensource-codex <em>· openai's codex desktop client, extracted and made runnable</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/orca"><span class="yr">2026</span><span class="title">orca <em>· reddit automation, dashboard, api, background workers, agents</em></span><span class="arrow">view →</span></a></li>
-      <li><a href="/work/el-gigatronius"><span class="yr">2026</span><span class="title">el gigatronius <em>· tiktok slideshow generator, multi-agent restyling</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/virtuchat"><span class="yr">2025</span><span class="title">virtuchat <em>· an uncensored, personalised chatbot</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/tiktok-trend-analyser"><span class="yr">2025</span><span class="title">tiktok trend analyser <em>· semantic clustering for short-form video</em></span><span class="arrow">view →</span></a></li>
       <li><a href="/work/make-videos-like-3b1b"><span class="yr">2025</span><span class="title">make-videos-like-3b1b <em>· ai-written manim, in the spirit of 3blue1brown</em></span><span class="arrow">view →</span></a></li>

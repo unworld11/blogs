@@ -332,48 +332,6 @@ scripts/            one-off utility and diagnostic scripts
     ],
   },
   {
-    slug: "el-gigatronius",
-    name: "el gigatronius",
-    year: "2026",
-    line: "Paste a viral TikTok slideshow, get its slides as a grid, and let an agent turn it into a template.",
-    status: "Live, needs its own backend",
-    action: { label: "Open el gigatronius", href: "https://el-gigatronius.vercel.app" },
-    links: [{ label: "el-gigatronius.vercel.app", href: "https://el-gigatronius.vercel.app" }],
-    stack: ["Next.js", "Claude Opus 4.7", "OpenAI", "sharp"],
-    lead: {
-      kind: "code",
-      file: "lib/agent/tools.js, condensed",
-      caption: "The agent's tools, with their input schemas left out. It can look at a page, zoom into a region and search the web, and the only thing it can write is a template.",
-      code: `export const toolDefinitions = [
-  {
-    name: "screenshot",
-    description:
-      "Navigate a headless browser to a URL and capture a PNG screenshot. " +
-      "Returns the image inline so you can see it, plus an image_id you can pass to \`zoom\` " +
-      "for closer inspection. Use this whenever you need to visually inspect a page.",
-  },
-  {
-    name: "zoom",
-    description:
-      "Crop and upscale a region of a previously captured screenshot so you can read fine details " +
-      "(small text, icons, spacing). Coordinates are in the original screenshot's pixel space.",
-  },
-  {
-    name: "save_template",
-    description:
-      "Persist a finished template to disk. Call this exactly once per run when you are confident " +
-      "the template is complete. ...",
-  },
-  { type: "web_search_20260209", name: "web_search" },
-];`,
-    },
-    intro: [
-      "Slideshow posts are the cheapest format on TikTok to make and the hardest to copy well, because what works lives in small details like the order of the slides, the text placement and the hook on slide one.",
-      "el gigatronius scrapes a post into a numbered image grid and keeps every output in a small library with a link back to the original. The agent then studies the grid, looking closely wherever it needs to, and saves a template. Around that sit three runners: Batch 50 templates, a daily remix runner and remix analytics.",
-    ],
-    sections: [],
-  },
-  {
     slug: "virtuchat",
     name: "virtuchat",
     year: "2025",
