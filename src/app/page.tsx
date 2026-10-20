@@ -409,17 +409,18 @@ const INKWELL_HTML = `
     <div class="eyebrow-label">ii · selected work</div>
     <h2 class="section-title" data-reveal>Things <em>made,</em> mostly with care.</h2>
     <ul class="work-list" data-reveal>
-      <li><a href="https://manycode.vercel.app" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">manycode <em>· multiplayer claude code and codex sessions, #17 on product hunt</em></span><span class="arrow">live →</span></a></li>
-      <li><a><span class="yr">2026</span><span class="title">ads-codex <em>· mac app running codex and the claude agent sdk behind one interface, sharing media tools over mcp</em></span><span class="arrow">in progress</span></a></li>
-      <li><a href="https://github.com/unworld11/opensource-codex" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">opensource-codex <em>· openai's codex desktop client, extracted and made runnable</em></span><span class="arrow">github →</span></a></li>
-      <li><a href="https://reddit.paralleldistribution.com" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">orca <em>· reddit automation, dashboard, api, background workers, agents</em></span><span class="arrow">live →</span></a></li>
-      <li><a href="https://el-gigatronius.vercel.app" target="_blank" rel="noopener"><span class="yr">2026</span><span class="title">el gigatronius <em>· tiktok slideshow generator, multi-agent restyling</em></span><span class="arrow">live →</span></a></li>
-      <li><a href="https://github.com/unworld11/virtuchat" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">virtuchat <em>· an uncensored, personalised chatbot</em></span><span class="arrow">github →</span></a></li>
-      <li><a href="https://github.com/unworld11/tiktokTrendAnalyser" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">tiktok trend analyser <em>· semantic clustering for short-form video</em></span><span class="arrow">github →</span></a></li>
-      <li><a href="https://github.com/unworld11/make-videos-like-3b1b" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">make-videos-like-3b1b <em>· ai-written manim, in the spirit of 3blue1brown</em></span><span class="arrow">github →</span></a></li>
-      <li><a href="https://github.com/unworld11/tinygrad" target="_blank" rel="noopener"><span class="yr">2025</span><span class="title">tinygrad <em>· a small autograd engine, after karpathy</em></span><span class="arrow">github →</span></a></li>
-      <li><a href="https://github.com/unworld11/dRAGarys" target="_blank" rel="noopener"><span class="yr">2024</span><span class="title">dRAGarys <em>· self-reflective retrieval-augmented generation</em></span><span class="arrow">github →</span></a></li>
-      <li><a href="https://github.com/unworld11/sisyphus" target="_blank" rel="noopener"><span class="yr">2024</span><span class="title">sisyphus <em>· csv &amp; sheets analysis with llama and serp</em></span><span class="arrow">github →</span></a></li>
+      <li><a href="/work/adforge"><span class="yr">2026</span><span class="title">adforge <em>· one-line briefs or reference ads into vertical films up to three minutes long</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/manycode"><span class="yr">2026</span><span class="title">manycode <em>· multiplayer claude code and codex sessions, #17 on product hunt</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/ads-codex"><span class="yr">2026</span><span class="title">ads-codex <em>· mac app running codex and the claude agent sdk behind one interface, sharing media tools over mcp</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/opensource-codex"><span class="yr">2026</span><span class="title">opensource-codex <em>· openai's codex desktop client, extracted and made runnable</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/orca"><span class="yr">2026</span><span class="title">orca <em>· reddit automation, dashboard, api, background workers, agents</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/el-gigatronius"><span class="yr">2026</span><span class="title">el gigatronius <em>· tiktok slideshow generator, multi-agent restyling</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/virtuchat"><span class="yr">2025</span><span class="title">virtuchat <em>· an uncensored, personalised chatbot</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/tiktok-trend-analyser"><span class="yr">2025</span><span class="title">tiktok trend analyser <em>· semantic clustering for short-form video</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/make-videos-like-3b1b"><span class="yr">2025</span><span class="title">make-videos-like-3b1b <em>· ai-written manim, in the spirit of 3blue1brown</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/tinygrad"><span class="yr">2025</span><span class="title">tinygrad <em>· a small autograd engine, after karpathy</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/dragarys"><span class="yr">2024</span><span class="title">dRAGarys <em>· self-reflective retrieval-augmented generation</em></span><span class="arrow">view →</span></a></li>
+      <li><a href="/work/sisyphus"><span class="yr">2024</span><span class="title">sisyphus <em>· csv &amp; sheets analysis with llama and serp</em></span><span class="arrow">view →</span></a></li>
     </ul>
   </section>
 
