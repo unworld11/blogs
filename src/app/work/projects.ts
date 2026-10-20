@@ -278,30 +278,56 @@ await window.ads.turns.start({
     action: { label: "Open the dashboard", href: "https://reddit.paralleldistribution.com" },
     links: [{ label: "reddit.paralleldistribution.com", href: "https://reddit.paralleldistribution.com" }],
     stack: ["Next.js", "Supabase", "Trigger.dev", "OpenAI"],
-    lead: {
-      kind: "code",
-      file: "README.md, trimmed",
-      caption: "How the repo is split. The device automation lives in a separate worker repo.",
-      code: `dashboard/          Next.js app (frontend + API routes + Trigger.dev tasks)
-  app/api/          API routes (Supabase-backed)
-  components/       React dashboard panels
-  lib/backend/      server-side helpers, queue
-  trigger/          background tasks (monitoring, scraping, queue)
-scripts/            one-off utility and diagnostic scripts
-.github/workflows/  deploy, tests, stale branch cleanup`,
-    },
+    lead: { kind: "image", src: "/work/orca/queue.jpg", alt: "orca review queue: pending, ready and rejected counts above a draft comment card with its score and AI reasoning", w: 1510, h: 812, caption: "The review queue, filled with sample drafts for a made-up brand so no client work is shown." },
     intro: [
       "I started Parallel's Reddit distribution division from nothing. It now runs as a team of three serving four brands at over 20 million views a month, and orca is the software that team works in.",
       "The dashboard and API sit on Supabase, scheduled and long-running work runs as Trigger.dev background tasks, and agents help with the writing. The device automation lives in a separate worker repo.",
     ],
     sections: [
       {
-        heading: "Behind a sign-in, on purpose",
+        heading: "Every draft comes with a score",
         body: [
-          "Every screen inside shows client brands and accounts, so the only public view is the door. Access is limited to authorised addresses, by email code or Google sign-in.",
+          "Workers watch rising threads in each brand's subreddits and draft a reply when one fits. A grader scores how well the thread matches the brand and writes down why, so a reviewer can see the case for a draft before reading it.",
+          "From the card a reviewer can claim it so two people don't work the same thread, then edit, regenerate, reject or approve it.",
         ],
-        media: [{ kind: "image", src: "/work/orca/login.jpg", alt: "orca sign-in screen for the Reddit monitoring dashboard", w: W, h: 1000 }],
-        layout: "wide",
+        media: [{ kind: "image", src: "/work/orca/queue-2.jpg", alt: "Two sample draft cards in the orca queue, each with thread stats, AI reasoning, reviewers and the draft text", w: 1510, h: 812, caption: "Further down the same queue. The drafts and the brand are sample data." }],
+        layout: "side",
+      },
+      {
+        heading: "Watching what went out",
+        body: [
+          "Posting isn't the end of it. A monitor runs on a schedule and checks every published comment for whether it's still visible or has been shadow-banned, how it's voting, how many people have seen it and whether it made top comment.",
+        ],
+        media: [{ kind: "image", src: "/work/orca/monitoring.jpg", alt: "Monitoring dashboard with totals for comments, visible, top comments and average upvotes, and a table of monitored comments with account details blurred", w: 1510, h: 812, caption: "Live monitoring, with accounts, subreddits and comment text blurred." }],
+        layout: "side",
+      },
+      {
+        heading: "Limits and prompts per client",
+        body: [
+          "Rate limits are set globally and can be overridden per client and per subreddit, so each account stays under a set number of comments in a time window. Every prompt the agents use, and the model behind it, can be changed per client from the same screen.",
+        ],
+        media: [{ kind: "image", src: "/work/orca/settings.jpg", alt: "Configuration screen with comment rate limits and an AI prompts panel, prompt text blurred", w: 1510, h: 812, caption: "Configuration, with the prompt text blurred." }],
+        layout: "side",
+      },
+      {
+        heading: "How the repo is split",
+        body: [
+          "One Next.js app holds the dashboard, its API routes and the Trigger.dev tasks, so a change to a queue and the screen that shows it ship together.",
+        ],
+        media: [
+          {
+            kind: "code",
+            file: "README.md, trimmed",
+            code: `dashboard/          Next.js app (frontend + API routes + Trigger.dev tasks)
+  app/api/          API routes (Supabase-backed)
+  components/       React dashboard panels
+  lib/backend/      server-side helpers, queue
+  trigger/          background tasks (monitoring, scraping, queue)
+scripts/            one-off utility and diagnostic scripts
+.github/workflows/  deploy, tests, stale branch cleanup`,
+          },
+        ],
+        layout: "code",
       },
     ],
   },
