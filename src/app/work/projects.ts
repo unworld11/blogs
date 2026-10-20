@@ -193,7 +193,7 @@ export const PROJECTS: Project[] = [
     stack: ["Electron", "Next.js", "TypeScript", "Codex app server", "Claude Agent SDK", "MCP"],
     lead: {
       kind: "code",
-      file: "docs/ARCHITECTURE.md",
+      file: "docs/ARCHITECTURE.md, condensed",
       caption: "Runtime events, as the app sees them. Both agents are translated into this one union.",
       code: `type RuntimeId = "codex" | "claude"
 
@@ -219,7 +219,7 @@ type RuntimeEvent =
         media: [
           {
             kind: "code",
-            file: "renderer",
+            file: "docs/ARCHITECTURE.md",
             code: `const page = await window.ads.jobs.open(jobId)
 const stop = await window.ads.events.follow(
   { scope: { type: "job", jobId }, after: page.cursor },
@@ -258,7 +258,7 @@ await window.ads.turns.start({
     stack: ["Electron", "asar", "shell"],
     lead: {
       kind: "code",
-      file: "README.md",
+      file: "README.md, trimmed",
       caption: "The repository layout. The UI ships minified, the main process is readable.",
       code: `├── docs/                    # how it was extracted, how to modify the UI
 ├── scripts/
@@ -289,26 +289,26 @@ await window.ads.turns.start({
     slug: "orca",
     name: "orca",
     year: "2026",
-    line: "The system behind Parallel's Reddit distribution: drafting, posting, monitoring and upvotes in one dashboard.",
+    line: "The dashboard, API and background workers behind Parallel's Reddit distribution.",
     status: "Live, behind a sign-in",
     action: { label: "Open the dashboard", href: "https://reddit.paralleldistribution.com" },
     links: [{ label: "reddit.paralleldistribution.com", href: "https://reddit.paralleldistribution.com" }],
-    stack: ["Next.js", "Supabase", "Trigger.dev", "OpenAI", "Slack", "CrowdReply"],
+    stack: ["Next.js", "Supabase", "Trigger.dev", "OpenAI"],
     lead: {
       kind: "code",
-      file: "README.md",
+      file: "README.md, trimmed",
       caption: "How the repo is split. The device automation lives in a separate worker repo.",
       code: `dashboard/          Next.js app (frontend + API routes + Trigger.dev tasks)
   app/api/          API routes (Supabase-backed)
   components/       React dashboard panels
-  lib/backend/      server helpers, queue, OpenAI, CrowdReply, Slack
+  lib/backend/      server-side helpers, queue
   trigger/          background tasks (monitoring, scraping, queue)
 scripts/            one-off utility and diagnostic scripts
 .github/workflows/  deploy, tests, stale branch cleanup`,
     },
     intro: [
       "I started Parallel's Reddit distribution division from nothing. It now runs as a team of three serving four brands at over 20 million views a month, and orca is the software that team works in.",
-      "The dashboard and API sit on Supabase. Monitoring, scraping and the posting queue run as Trigger.dev background tasks, drafts come from OpenAI, and the team hears about anything that needs a person in Slack. The device side, which means real accounts on real phones, lives in a separate worker repo.",
+      "The dashboard and API sit on Supabase, scheduled and long-running work runs as Trigger.dev background tasks, and agents help with the writing. The device automation lives in a separate worker repo.",
     ],
     sections: [
       {
@@ -332,15 +332,30 @@ scripts/            one-off utility and diagnostic scripts
     stack: ["Next.js", "Claude Opus 4.7", "OpenAI", "sharp"],
     lead: {
       kind: "code",
-      file: "lib/agent/tools.js",
-      caption: "The agent's tools. It can look at a page, zoom into a region and search the web, and the only thing it can write is a template.",
-      code: `{ name: "screenshot",   // url, full_page, selector, wait_ms, viewport
-  description: "Navigate to a URL and capture it" },
-{ name: "zoom",         // image_id, x, y, width, height, scale
-  description: "Crop and upscale part of a prior screenshot" },
-{ name: "save_template",// name, template, notes
-  description: "Persist the template it worked out" },
-{ type: "web_search_20260209", name: "web_search" }`,
+      file: "lib/agent/tools.js, condensed",
+      caption: "The agent's tools, with their input schemas left out. It can look at a page, zoom into a region and search the web, and the only thing it can write is a template.",
+      code: `export const toolDefinitions = [
+  {
+    name: "screenshot",
+    description:
+      "Navigate a headless browser to a URL and capture a PNG screenshot. " +
+      "Returns the image inline so you can see it, plus an image_id you can pass to \`zoom\` " +
+      "for closer inspection. Use this whenever you need to visually inspect a page.",
+  },
+  {
+    name: "zoom",
+    description:
+      "Crop and upscale a region of a previously captured screenshot so you can read fine details " +
+      "(small text, icons, spacing). Coordinates are in the original screenshot's pixel space.",
+  },
+  {
+    name: "save_template",
+    description:
+      "Persist a finished template to disk. Call this exactly once per run when you are confident " +
+      "the template is complete. ...",
+  },
+  { type: "web_search_20260209", name: "web_search" },
+];`,
     },
     intro: [
       "Slideshow posts are the cheapest format on TikTok to make and the hardest to copy well, because what works lives in small details like the order of the slides, the text placement and the hook on slide one.",
@@ -359,8 +374,8 @@ scripts/            one-off utility and diagnostic scripts
     stack: ["Python", "Streamlit", "Ollama", "Docker", "AWS EC2"],
     lead: {
       kind: "code",
-      file: "app.py",
-      code: `client = Client(host=OLLAMA_HOST)
+      file: "app.py, condensed",
+      code: `client = Client()
 
 model = st.selectbox(
     'Model',
@@ -369,11 +384,11 @@ model = st.selectbox(
 )
 
 def save_custom_personality():
-    return {
+    personality_data = {
         "name": st.session_state.personality_name,
         "traits": st.session_state.personality_traits,
         "tone": st.session_state.personality_tone,
-        "background": st.session_state.personality_background,
+        "background": st.session_state.personality_background
     }`,
     },
     intro: [
@@ -420,7 +435,7 @@ def save_custom_personality():
     stack: ["Python", "Streamlit", "Groq", "Llama 3.3 70B", "manimlib"],
     lead: {
       kind: "code",
-      file: "app.py",
+      file: "app.py, condensed",
       code: `completion = client.chat.completions.create(
     model="llama-3.3-70b-versatile",
     messages=[{
@@ -453,28 +468,29 @@ def save_custom_personality():
     stack: ["Python", "graphviz"],
     lead: {
       kind: "code",
-      file: "engine.py",
-      code: `def __mul__(self, other):
-    other = other if isinstance(other, Value) else Value(other)
-    out = Value(self.data * other.data, (self, other), '*')
-    def _backward():
-        self.grad += other.data * out.grad
-        other.grad += self.data * out.grad
-    out._backward = _backward
-    return out
+      file: "engine.py, two methods of Value",
+      code: `    def __mul__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
+        out = Value(self.data * other.data, (self, other), '*')
+        def _backward():
+            self.grad += other.data * out.grad
+            other.grad += self.data * out.grad
+        out._backward = _backward
+        return out
 
-def backward(self):
-    topo, visited = [], set()
-    def build_topo(v):
-        if v not in visited:
-            visited.add(v)
-            for child in v._prev:
-                build_topo(child)
-            topo.append(v)
-    build_topo(self)
-    self.grad = 1
-    for v in reversed(topo):
-        v._backward()`,
+    def backward(self):
+        topo = []
+        visited = set()
+        def build_topo(v):
+            if v not in visited:
+                visited.add(v)
+                for child in v._prev:
+                    build_topo(child)
+                topo.append(v)
+        build_topo(self)
+        self.grad = 1
+        for v in reversed(topo):
+            v._backward()`,
     },
     intro: [
       "Every Value remembers the values it came from and how to pass a gradient back to them. backward sorts the graph topologically and runs those closures in reverse, and that's all backpropagation is.",
@@ -493,11 +509,12 @@ def backward(self):
     stack: ["Python", "LangGraph", "LangChain"],
     lead: {
       kind: "code",
-      file: "main.py",
+      file: "main.py, condensed",
       code: `def decide_to_generate(state):
     filtered_documents = state["documents"]
     if not filtered_documents:
-        # every document failed the relevance grade
+        # All documents have been filtered check_relevance
+        # We will re-generate a new query
         return "transform_query"
     return "generate"
 
@@ -518,17 +535,16 @@ workflow.add_node("transform_query", transform_query)`,
     name: "sisyphus",
     year: "2024",
     line: "Ask questions about a CSV or a Google Sheet in plain English, with web search folded in when the data isn't enough.",
-    status: "Live on Streamlit",
-    action: { label: "Open sisyphus", href: "https://sisyphus.streamlit.app" },
+    status: "Public on GitHub",
+    action: { label: "Read the code on GitHub", href: "https://github.com/unworld11/sisyphus" },
     links: [
-      { label: "sisyphus.streamlit.app", href: "https://sisyphus.streamlit.app" },
       { label: "github.com/unworld11/sisyphus", href: "https://github.com/unworld11/sisyphus" },
       { label: "Loom walkthrough", href: "https://www.loom.com/share/8159c85d39bd4e9d9d28abd4997317d5" },
     ],
     stack: ["Python", "Streamlit", "Groq", "Llama 3 8B", "SerpAPI", "Google Sheets API"],
     lead: {
       kind: "code",
-      file: "app.py",
+      file: "app.py, condensed",
       code: `system_context = (
     f"Analyzing a dataset with {stats['rows']} rows "
     f"and columns: {', '.join(stats['columns'])}."
@@ -547,7 +563,7 @@ completion = client.chat.completions.create(
     },
     intro: [
       "Upload a CSV or paste a sheet link and sisyphus shows a preview, column statistics and charts for the columns you choose. Questions go to Llama 3 on Groq with the shape of the dataset as context, and when the answer needs the outside world, three search results from SerpAPI go along with it.",
-      "Every answer is kept in a running table with its question and timestamp, so an analysis session leaves a record behind. The free Streamlit host puts the app to sleep when nobody uses it, so it can take a moment to wake.",
+      "Every answer is kept in a running table with its question and timestamp, so an analysis session leaves a record behind.",
     ],
     sections: [],
   },
